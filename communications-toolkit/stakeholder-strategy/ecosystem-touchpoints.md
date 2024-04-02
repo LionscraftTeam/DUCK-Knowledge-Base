@@ -6,6 +6,10 @@ description: Overview
 
 Below you can find common channels and means of contacts used by Node Operators to enable tailored communications across the diverse types of stakeholders.
 
+{% hint style="info" %}
+Stakeholders highly individual and therefore preferences for communication channels can differ. These individual channel preferences need to be identified in advance.
+{% endhint %}
+
 ### 🖥️ **Website**
 
 * Service offering

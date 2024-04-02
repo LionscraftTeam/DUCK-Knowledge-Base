@@ -4,6 +4,8 @@
 
 This document provides a guide for Ethereum node operators on the best practices for conducting IT security-related reviews and audits. It aims to ensure the security, efficiency, and compliance of the node operations within the Ethereum network.&#x20;
 
+See as well the NIST Technical guidance to Information Security Testing and Assessment : [https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
+
 ## 1. Internal Reviews vs External Audits
 
 #### Internal Reviews:
@@ -63,6 +65,7 @@ This document provides a guide for Ethereum node operators on the best practices
 
 * **Internal Audit Checklist:** Develop a comprehensive list covering all aspects of node operation, including security, performance, and compliance. This checklist should be regularly updated to reflect changes in technology and regulations. This checklist should be created with input from the internal team and, if possible, checklists from external sources.
 * **External Audit Checklist:** For external audits, prepare a list that includes areas for external verification.
+*
 
 #### Documentation Approach:
 

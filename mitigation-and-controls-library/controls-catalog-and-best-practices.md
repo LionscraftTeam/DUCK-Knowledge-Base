@@ -47,7 +47,7 @@ Special considerations:
 * GIR9
 {% endhint %}
 
-### Server-Side request forgery mitigations
+### Server-side request forgery mitigations
 
 An often overlooked aspect of attack vectors is server-side request forgery. In essence, an attacker sends (almost) random messages to the server and analyzes the response. Based on that, they are able to deduce behavioral patterns that can be used for a successful attack.
 
@@ -109,8 +109,8 @@ Main outline from the COSO principles:
 * GIR5
 * DOW18
 * DOW16
-* SLA11 - SLA18
-* SLA1 - SLA5
+* SLS11 - SLS18
+* SLS1 - SLS5
 {% endhint %}
 
 ### Risk assessment of one's own Node operation
@@ -201,8 +201,10 @@ Main outline from the COSO principles:
 {% hint style="info" %}
 **Links to risks:**
 
-* KEC10
+* KEC11
 * GIR1
+* KEC8
+* GIR25
 {% endhint %}
 
 ### Protection of Data in transit
@@ -233,7 +235,7 @@ Main outline from the COSO principles:
 **Links to Risks:**
 
 * KEC1 - KEC3
-* KEC4 - KEC9
+* KEC4 - KEC11
 {% endhint %}
 
 ### Capture configuration changes vulnerabilities
@@ -259,6 +261,7 @@ Main outline from the COSO principles:
 **Links to Risks:**
 
 * GIR4
+* KEC8
 {% endhint %}
 
 ### Have Monitoring in place
@@ -271,6 +274,7 @@ Main outline from the COSO principles:
 * Design and improve on Detection Measures — Ideally capture unauthorized access, suspicios traffic, etc.
 * Implement filters to not even let suspicious requests contact the back-end.
 * Check frequently if detection tools are working correctly.
+* Have one or more centralized dashboards to aggregate the data and present it in a digestible way to a human observer.
 
 **References:**
 
@@ -378,6 +382,7 @@ Main outline from the COSO principles:
 * Tests are in place for system changes.
 * Have a ticketing system in place to document and review suggested changes.
 * Have a controlled deployment.
+* Certificate management for internal and external communication.
 * Have a way to directly identify historical changes to the infrastructure.
 * A templated configuration of IT and control systems is created and maintained.
 * Have breaking-glass change mechanisms in place for emergency situations.
@@ -394,12 +399,14 @@ Main outline from the COSO principles:
 {% hint style="info" %}
 **Links to Risks**
 
-* SLA6
-* SLA7
+* SLS6
+* SLS7
 * GIR3
 * GIR18
 * GIR20
 * GIR21
+* DOW19
+* DOW20
 {% endhint %}
 
 ### Develop Risk Mitigation Activities
@@ -434,9 +441,10 @@ Main outline from the COSO principles:
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA8
-* SLA9
+* SLS8
+* SLS9
 * GIR5
+* DOW19
 {% endhint %}
 
 ### Maintain the right operative capacity
@@ -527,8 +535,8 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA8
-* SLA9
+* SLS8
+* SLS9
 * GIR1
 * GIR5
 {% endhint %}
@@ -552,8 +560,8 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA8
-* SLA9
+* SLS8
+* SLS9
 {% endhint %}
 
 ### Authentication Information
@@ -573,8 +581,8 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA8
-* SLA9
+* SLS8
+* SLS9
 {% endhint %}
 
 ### Access Rights
@@ -594,8 +602,8 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA8
-* SLA9
+* SLS8
+* SLS9
 {% endhint %}
 
 ### Physical Controls
@@ -647,7 +655,7 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* KEC10
+* KEC11
 {% endhint %}
 
 ### Protection against malware
@@ -695,6 +703,7 @@ Main outline of the Information security controls reference:
 **Links to risks:**
 
 * GIR3
+* KEC8
 {% endhint %}
 
 ### Information deletion
@@ -715,7 +724,7 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA10
+* SLS10
 * DOW17
 {% endhint %}
 
@@ -757,7 +766,7 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to Risks:**
 
-* KEC10
+* KEC11
 * GIR6
 * GIR7
 {% endhint %}
@@ -804,6 +813,7 @@ Main outline of the Information security controls reference:
 
 * DOW10
 * GIR9
+* KEC8
 {% endhint %}
 
 ### Secure development life cycle
@@ -827,6 +837,10 @@ Main outline of the Information security controls reference:
 **Links to Risks:**
 
 * GIR8
+* DOW19
+* DOW20
+* KEC8
+* GIR25
 {% endhint %}
 
 ### Testing
@@ -850,6 +864,8 @@ Main outline of the Information security controls reference:
 
 * GIR20
 * GIR21
+* DOW19
+* DOW20
 {% endhint %}
 
 ### Outsourced development
@@ -892,7 +908,7 @@ Main outline of the Information security controls reference:
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA6 - SLA7
+* SLS6 - SLS7
 * GIR11
 * GIR18
 {% endhint %}
@@ -917,4 +933,5 @@ Main outline of the Information security controls reference:
 
 * DOW2
 * DOW11
+* GIR25
 {% endhint %}

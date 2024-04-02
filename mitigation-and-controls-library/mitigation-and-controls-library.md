@@ -1,4 +1,4 @@
-# ℹ️ About
+# ℹ️ Mitigation & Controls Library
 
 The Mitigations & Controls Library is a curated repository of information, tools, and best practices designed to address and manage risks inherent to node operations. This comprehensive library serves as a go-to resource for node operators, providing actionable insights and mitigation options to enhance the security, reliability, and efficiency of their operations.
 

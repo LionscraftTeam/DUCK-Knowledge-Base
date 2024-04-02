@@ -30,6 +30,16 @@ This type of stakeholders discloses the identity and provides contact details an
 * Need for monitoring of business relevant news
 * Need for close monitoring and engagement in case of incidents with business impact and public awareness
 
+### **Core & Client Dev Teams**
+
+* Teams developing and maintaining critical node operations software
+* Need for communication channel in case updates, maintenance and information around critical software components, especially in the event of software issues
+
+### Other Node Operators
+
+* Node Operators running validators and similar tech stack
+* Need for close monitoring of communication channels and alerting in case of published incidents with potential relevance for own setup
+
 ### **Optional: Service Customers**
 
 * Individuals or organizations using additional service provided by Node Operators (e.g., API users, customers for white-label solutions etc.)

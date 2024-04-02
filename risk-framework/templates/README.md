@@ -1,4 +1,4 @@
-# Risk Templates
+# Templates
 
 
 

@@ -48,7 +48,7 @@ The **Incident Communication Protocols** equip Node Operators with guidelines ar
 1. Involve relevant teams of legal, privacy, policy, and communication departments (if applicable).
 2. Update executive and internal teams before any external communication.
 3. Ensure to communicate only when things are certain and clear 100%.
-4. Handle the sharing of information based on the respective playbook.
+4. Handle the sharing of information based on the respective incident response plan.
 
 {% hint style="info" %}
 **NOTE:** Communicating as an incident is ongoing can result in further damage, only communicating about the root cause when it is identified and potentially resolved on a case-by-case basis.

@@ -6,7 +6,7 @@ The following procedures shall ensure appropriate consideration and management o
 
 1. Define all stakeholders that are relevant to your organization \
    (Reference: [stakeholder-overview.md](stakeholder-overview.md "mention"))
-2. Define all channels that you intend to use for engagement with your stakeholders \
+2. Define and align communciation channels that you intend to use for engagement with your stakeholders \
    (Reference: [ecosystem-touchpoints.md](ecosystem-touchpoints.md "mention"))
 3. Perform a stakeholder mapping and define your individual ways of engagement with the different stakeholder groups (Reference: [#stakeholder-map](stakeholder-management.md#stakeholder-map "mention"))
 4. Document all defined stakeholders with the respective management measures in the stakeholder register (Reference: [#stakeholder-register](stakeholder-management.md#stakeholder-register "mention")). Also take best practices covering incident communication into account (Reference: [incident-communication-protocols.md](../incident-communication-protocols.md "mention")).
@@ -20,7 +20,7 @@ The **Stakeholder Map** provides guidance when categorizing the individual stake
 Only use the Communication Map below as a reference! Review each your stakeholder individually and assess needed means of contact! You can find the template here: [stakeholder-map.md](../templates-and-toolkits/stakeholder-map.md "mention")
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Stakeholder_Map (4).png" alt=""><figcaption><p>Stakeholder Map</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Stakeholder_Map (6).png" alt=""><figcaption><p>Stakeholder Map</p></figcaption></figure>
 
 ### **Manage Closely**
 

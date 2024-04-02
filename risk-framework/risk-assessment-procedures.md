@@ -11,21 +11,23 @@ description: >-
 
 ## **1. Assessment of Financial Loss for Each Identified Scenario**
 
-**Direct Monetary Losses from the Slashing Event**\
+**Direct Monetary Losses from a Slashing Event**\
 Assess the losses directly linked to the slashing event. This can include:
 
 * Direct slashing penalty due to double signing (currently 1 ETH)
-* Correlated slashing penalty
-* Downtime penalties until the validator is exited
+* "Correlated slashing penalty" occurs 18 days after the initial slashing
+* Slashing leads to validator downtime until the slashed validator is exited
 * Missed rewards
-* Possible insurance payments
+* Possible recoveries from insurance payments
+* The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
 
-**Direct Monetary Losses from the Downtime Event**\
+**Direct Monetary Losses from a Downtime Event**\
 Assess the losses directly from the downtime event. This can include:
 
 * Downtime penalties until the validator is exited
 * Missed rewards
-* Possible insurance payments
+* Possible recoveries from insurance payments
+* The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
 
 **Reputational Risks**\
 Determine the monetary loss from reputational damage. This includes:
@@ -52,12 +54,13 @@ Additional costs can come from legal disputes and liabilities. This can include:
 
 ## **2. Assessment of the Occurrence Probability for Each Identified Scenario**
 
-Assign a likelihood of occurrence and estimate the potential financial impact for each risk identified. This approach considers the specific operational context of the node operator and requires the node operator to tailor the assessment to its unique risk exposure, vulnerabilities and to take the mitigation strategies into account. This process can be informed by:
+Assign a likelihood of occurrence and estimate the potential financial impact for each risk identified. This approach considers the specific operational context of the node operator and requires the node operator to tailor the assessment to its unique risk exposure, and vulnerabilities and to take the mitigation strategies into account. This process can be informed by:
 
-* Analyzing historical data to understand past trends and incidents
+* Analyzing historical data to understand past trends and incidents (external, internal incidents, and near-miss incidents)
 * Reviewing industry reports for insights into common risks and their fiscal consequences in similar scenarios
 * Consulting with experts in the field to gain a comprehensive perspective on risk probabilities and impacts
 * Utilizing risk assessment tools or software for a more data-driven analysis
+* Analyze the Mean Time to Repair (MTTR, The average time it takes to fully restore a system or service after a failure or security incident) in case of a downtime under different scenarios.
 
 ***
 

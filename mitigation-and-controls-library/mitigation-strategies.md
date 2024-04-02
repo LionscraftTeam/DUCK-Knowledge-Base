@@ -17,19 +17,19 @@ To avoid double signing, validators maintain a history of messages they signed, 
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA1
-* SLA2
-* SLA3
+* SLS1
+* SLS2
+* SLS3
 {% endhint %}
 
 ### Doppelgänger protection
 
-While there are multiple measures possible to be taken to avoid two validator running with the same signing keys, one can also employ technologies that detect and prevent two validators running at the same time. This can be done using monitoring and alert systems, or pre-defined tools such as [DoppelBuster](https://github.com/SimplyStaking/DoppelBuster).
+While there are multiple measures possible to be taken to avoid two validator running with the same signing keys, one can also employ technologies that detect and prevent two validators running at the same time. This can be done using monitoring and alert systems, robust StatefulSet handling in Kubernetes to ensure no two containers with the same keys run at the same time, or pre-defined tools such as [DoppelBuster](https://github.com/SimplyStaking/DoppelBuster).
 
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA2
+* SLS2
 {% endhint %}
 
 ### Use of a Web3Signer
@@ -45,21 +45,22 @@ Similar to the anti-slashing database, whenever used, a web3signer needs to be
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA2 - SLA3
-* SLA14 - SLA15
+* SLS2 - SLS3
+* SLS14 - SLS15
 * KEC5 - KEC6
 {% endhint %}
 
 ### Client diversity
 
-Maintain a diverse set of clients for different protocols, in order to reduce blast radius in case one of the clients appears to have a protocol error or other bug. In some cases, migrate keys to different clients in case of a specific client error observed.
+Maintain a diverse set of clients for different protocols, in order to reduce blast radius in case one of the clients appears to have a protocol error or other bug. In some cases, migrate keys to different clients in case of a specific client error observed, such as startup issues after controlled update or bug in the latest version of the chosen client.
 
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA6
-* SLA7
+* SLS6
+* SLS7
 * DOW2
+* DOW19
 {% endhint %}
 
 ### Distributed Validator Technology (DVT)
@@ -69,9 +70,9 @@ In order to avoid the single-point of failure problem for a node-validator witho
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA1
-* SLA14
-* SLA15
+* SLS1
+* SLS14
+* SLS15
 * KEC2 - KEC6
 {% endhint %}
 
@@ -91,15 +92,19 @@ In order to avoid loosing out on opportunity cost, Node operators need to develo
 
 Any secret needs to be accessed and authorized through a vault system. In this way, everything is audited, and anomaly detection can be activated for those vaults.
 
+Also, multi-sig wallets should be used where appropriate.
+
 Furthermore, access credentials for internal systems should also be stored inside those vaults, and key rotation managed from there.
 
 {% hint style="info" %}
 **Links to Risks:**
 
-* SLA5
+* SLS5
 * KEC1 - KEC4
 * KEC6
-* KEC8 - KEC10
+* KEC8
+* KEC9 - KEC11
+* GIR25
 {% endhint %}
 
 ### Encryption of data at rest/in transit
@@ -109,9 +114,9 @@ Many different components interplay while a staking operation is going on. It is
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA8
+* SLS8
 * KEC5 - KEC7
-* KEC9 - KEC10
+* KEC10 - KEC11
 * GR10
 {% endhint %}
 
@@ -132,7 +137,7 @@ Employees should not be able to delete signing keys and there should be a back-u
 {% hint style="info" %}
 **Links to risks:**
 
-* KEC9
+* KEC10
 {% endhint %}
 
 ### Access to unencrypted signing keys
@@ -143,7 +148,7 @@ The use case where an employee would need to access a signing key is low, and th
 **Links to risks:**
 
 * KEC2
-* KEC10
+* KEC11
 {% endhint %}
 
 ### Key rotation
@@ -158,7 +163,7 @@ Key rotation and a proper process around it is key to protect one's infrastructu
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA8
+* SLS8
 * GIR6 - GIR7
 {% endhint %}
 
@@ -173,7 +178,7 @@ Each user should be assigned roles, and some are temporary. There should be a cl
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA8 - SLA9
+* SLS8 - SLS9
 * DOW16
 * GIR1
 * GIR7
@@ -187,10 +192,12 @@ Even when employing RBAC, there are ways to log into containers as users and acq
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA8 - SLA9
+* SLS8 - SLS9
 * DOW16
 * GIR1
 * GIR22
+* KEC8
+* GIR25
 {% endhint %}
 
 ### Strict employment termination process in place
@@ -200,8 +207,9 @@ Ensure that terminated employees do not have lingering credentials they can use 
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA10
+* SLS10
 * DOW17
+* GIR25
 {% endhint %}
 
 ### No access from external network to the nodes
@@ -211,7 +219,7 @@ Following the principle of defense in depth and least privilege, it is important
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA12
+* SLS12
 {% endhint %}
 
 ### Strong authentication
@@ -221,7 +229,7 @@ Use password policies at every layer of the infrastructure (i.e. DUCK123 should 
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA13
+* SLS13
 {% endhint %}
 
 ### Prevent physical access to non-authorized persons
@@ -233,6 +241,7 @@ This is mainly for bare-metal installations. If you host your nodes on-premise, 
 
 * DOW4
 * KEC6
+* KEC8
 {% endhint %}
 
 ## Development and Update Process
@@ -255,8 +264,8 @@ Ideally, metrics should be used to verify a high degree of testing culture. This
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA4-SLA7
-* SLA18
+* SLS4-SLS7
+* SLS18
 * DOW2
 * DOW6
 * DOW11-DOW14
@@ -265,6 +274,8 @@ Ideally, metrics should be used to verify a high degree of testing culture. This
 * GIR18
 * GIR21
 * GIR23-GIR24
+* DOW19
+* DOW20
 {% endhint %}
 
 ### No custom changes to the validator software
@@ -274,8 +285,10 @@ Validator software is open source, but in order to ensure that no protocol error
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA7
+* SLS7
 * DOW13
+* DOW19
+* DOW20
 {% endhint %}
 
 ### Sanitize inputs
@@ -296,6 +309,8 @@ This minimizes a potential blast radius. It is important to run any change (even
 **Links to risks:**
 
 * GIR11
+* DOW19
+* DOW20
 {% endhint %}
 
 ### Use containerized and orchestrated environments only.
@@ -317,7 +332,10 @@ Human error is a real threat, and every process should at least follow an automa
 
 * GIR16
 * GIR18 - GIR21
-* SLA17
+* SLS17
+* DOW19
+* DOW20
+* GIR25
 {% endhint %}
 
 ### Minimize CVEs in images
@@ -347,8 +365,8 @@ The alert systems should be automatically set up to take actions such as shuttin
 {% hint style="info" %}
 **Links to risks:**
 
-* SLA8
-* SLA16
+* SLS8
+* SLS16
 * DOW6
 * DOW15
 {% endhint %}
@@ -359,6 +377,7 @@ The alert systems should be automatically set up to take actions such as shuttin
 * Check the uptime promise of cloud provider (minimum three 9s)
 * Failover system (also in different locations)
 * Keeping track of age and replacing appliances
+* Conduct an internal special study of failover and load balancer strategies
 * Securing the physical access
 * Being informed about the relevant natural catastrophes
 * Ensure stable Internet connection of the System (Cloud, Bare Metal, ....)
@@ -369,5 +388,6 @@ The alert systems should be automatically set up to take actions such as shuttin
 * Back-Up/DR / BC Policies
 * Validate cloud, data center or infrastructure provider regarding security
 * Safety training
+* Central & accessible documentation of critical knowledge
 * Having a communication toolkit and process prepared
 * Having a incident response policy / strategy

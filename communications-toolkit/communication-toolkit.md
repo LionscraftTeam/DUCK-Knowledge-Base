@@ -2,7 +2,7 @@
 description: Introducing the Communication Toolkit
 ---
 
-# ℹ️ About
+# ℹ️ Communication Toolkit
 
 The **Communication Toolkit** is a customizable set of tools and best practices that can support node operators to enhance their communication and engagement strategies within their network and the broader ecosystem. Recognizing the pivotal role node operators play as foundational infrastructure entities, this framework underscores the importance of transparent, timely, and effective communication.
 

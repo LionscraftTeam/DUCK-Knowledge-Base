@@ -4,7 +4,7 @@
 
 D.U.C.K. is introducing 3 layers of critical knowledge and information to the Node Operator community with risks at center of it. The **D.U.C.K. Components Overview** shall provide a simple understanding of the knowledge captured within this knowledge base.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Component_Structure (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Risk Framework
 
@@ -18,7 +18,7 @@ Key sections are:
 * [risk-assessment-procedures.md](../risk-framework/risk-assessment-procedures.md "mention") - Information regarding procedures to assess the impact of identified risks
 * [risk-management-procedures.md](../risk-framework/risk-management-procedures.md "mention") - Guidance on procedures to manage identified risks and potential impacts
 * [review-and-audit-procedures.md](../risk-framework/review-and-audit-procedures.md "mention") - Best practices around review & auditing of risks management processes in place
-* [risk-register.md](../risk-framework/risk-templates/risk-register.md "mention") - Documentation template for all risks, mitigations & controls
+* [risk-register.md](../risk-framework/templates/risk-register.md "mention") - Documentation template for all risks, mitigations & controls
 
 ## Mitigation & Controls
 
