@@ -1,3 +1,4 @@
+Hello World!
 # 🦆 Introduction
 
 <figure><img src=".gitbook/assets/DALL·E 2024-01-22 16.39.23 - In a futuristic, digital art-style, depict a duck embodying the essence of Ethereum and advanced network technology. This duck should appear cutting-e.png" alt=""><figcaption></figcaption></figure>
