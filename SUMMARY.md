@@ -4,6 +4,7 @@
 
 * [🦆 Introduction](README.md)
 * [🤝 Contributors](d.u.c.k.-knowledge-base/contributors.md)
+* [🎯 Journey ahead](d.u.c.k.-knowledge-base/journey-ahead.md)
 * [ℹ️ Structure Overview](d.u.c.k.-knowledge-base/structure-overview.md)
 
 ## Risk Framework
