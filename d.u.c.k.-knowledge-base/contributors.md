@@ -4,7 +4,7 @@ description: Overview of all partners supporting the D.U.C.K. initiative
 
 # 🤝 Contributors
 
-The D.U.C.K knowledge base is the result of a collaboration between many experts in the fields of Node Operations, Security, Risk, inside and beyond the Lido ecosystem.&#x20;
+The D.U.C.K knowledge base is the result of a collaboration between many experts in the fields of Node Operations, Security, and Risk.&#x20;
 
 The [#core-team](contributors.md#core-team "mention") created the initial draft version and contributed their individual expertises & knowledge to collect helpful and valuable information for the Node Operator community overall.
 

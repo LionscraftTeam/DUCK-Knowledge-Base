@@ -4,11 +4,11 @@
 
 ## What is D.U.C.K.?
 
-The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip Lido node operators and beyond with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Broken link](broken-reference "mention"), [Broken link](broken-reference "mention"), and the [Broken link](broken-reference "mention"), Node Operators have access to assets that they can customize based on their own unique setup and operations.
+The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators and beyond with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Broken link](broken-reference "mention"), [Broken link](broken-reference "mention"), and the [Broken link](broken-reference "mention"), Node Operators have access to assets that they can customize based on their own unique setup and operations.
 
 ## Why is D.U.C.K relevant?
 
-The wide usage of the Lido protocol in Ethereum’s staking ecosystem is powered by the ever-expanding set of node operators who use it. Each operator, with its unique operational methodology, contributes to the protocol’s strength and resilience. This diversity of processes, tools, systems, and geographies within the group of operators should be further nurtured and promoted.
+Ethereum’s staking ecosystem is powered by the ever-expanding set of node operators. Each operator, with its unique operational methodology, contributes to the protocol’s strength and resilience. This diversity of processes, tools, systems, and geographies within the group of operators should be further nurtured and promoted.
 
 With expected growth in the operator set, each with different team structures and sizes, global footprints, and operational complexities, collaborative and cooperative mechanisms should be devised. They should enable operators to effectively grasp crucial insights on risk management and mitigation, control measures, and operational best practices.
 

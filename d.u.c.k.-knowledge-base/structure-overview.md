@@ -4,7 +4,7 @@
 
 D.U.C.K. is introducing 3 layers of critical knowledge and information to the Node Operator community with risks at center of it. The **D.U.C.K. Components Overview** shall provide a simple understanding of the knowledge captured within this knowledge base.
 
-<figure><img src="../.gitbook/assets/Component_Structure (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Component_Structure.png" alt=""><figcaption></figcaption></figure>
 
 ## Risk Framework
 
