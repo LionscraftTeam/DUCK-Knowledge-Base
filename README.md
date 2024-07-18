@@ -4,7 +4,7 @@
 
 ## What is D.U.C.K.?
 
-The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators and beyond with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Broken link](broken-reference "mention"), [Broken link](broken-reference "mention"), and the [Broken link](broken-reference "mention"), Node Operators have access to assets that they can customize based on their own unique setup and operations.
+The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Broken link](broken-reference "mention"), [Broken link](broken-reference "mention"), and the [Broken link](broken-reference "mention"), Node Operators have access to assets that they can customize based on their own unique setup and operations.
 
 ## Why is D.U.C.K relevant?
 
