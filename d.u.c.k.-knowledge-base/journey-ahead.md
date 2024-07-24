@@ -23,6 +23,7 @@ _Content_
 _Features_
 
 * **Self-sustaining Governance** – Transition to new governance mechanisms to make the initiative more community-driven
+* **GitPOAPs** - Specific POAPs for contributors & supporters of D.U.C.K.
 * **Badges** – Certification badges for node operators using D.U.C.K.
 
 _Outreach_
