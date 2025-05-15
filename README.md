@@ -18,6 +18,10 @@ The primary objective of DUCK is to bootstrap and facilitate community engagemen
 
 By disseminating and providing easy access to this knowledge, the node operator community will be empowered to increase robustness. It will ensure that all operators, irrespective of their technical proficiency, can engage with a wealth of information, experiences, and methodologies to adapt and customize to their own specific service model.&#x20;
 
+## Updating D.U.C.K.
+
+The knowledge base is in revision, to help make it more actionable
+
 ## How can you contribute?
 
 For any feedback, updates, or comments please visit: [https://forms.gle/RaUWtoKdNWivJb5R8](https://forms.gle/RaUWtoKdNWivJb5R8)
