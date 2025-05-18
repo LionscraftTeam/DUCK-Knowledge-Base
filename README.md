@@ -4,7 +4,7 @@
 
 ## What is D.U.C.K.?
 
-The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Broken link](broken-reference "mention"), [Broken link](broken-reference "mention"), and the [Broken link](broken-reference "mention"), Node Operators have access to assets that they can customize based on their own unique setup and operations.
+The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Risk Framework](risk-framework/risk-framework.md), [Mitigation & Controls Library](mitigation-and-controls-library/mitigation-and-controls-library), and the [Communications Toolkit](communications-toolkit/communications-toolkit), Node Operators have access to assets that they can customize based on their own unique setup and operations.
 
 ## Why is D.U.C.K relevant?
 
@@ -20,8 +20,10 @@ By disseminating and providing easy access to this knowledge, the node operator 
 
 ## Updating D.U.C.K.
 
-The knowledge base is in revision, to help make it more actionable
+The knowledge base is being revised over the course of 2025, to help make it more actionable.
 
 ## How can you contribute?
 
-For any feedback, updates, or comments please visit: [https://forms.gle/RaUWtoKdNWivJb5R8](https://forms.gle/RaUWtoKdNWivJb5R8)
+You can provide any feedback, or comments through [a google form](https://forms.gle/RaUWtoKdNWivJb5R8),
+raising or commenting on issues or pull requests in [this github repository](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/),
+or through the [DUCK Telegram channel](@@).
