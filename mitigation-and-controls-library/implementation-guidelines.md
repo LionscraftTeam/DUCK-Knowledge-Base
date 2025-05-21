@@ -26,31 +26,20 @@ sudo systemctl restart sshd
 
 ## Monitoring Guidelines
 
-When you have a lot to monitor, like a server farm, you need a strategy to decide what is important enough to monitor:
-
-A logical strategy allows you to make uniform dashboards and scale your observability platform more easily.
-
-#### Guidelines for usage <a href="#guidelines-for-usage" id="guidelines-for-usage"></a>
-
-* The USE method tells you how happy your machines are, the RED method tells you how happy your users are.
-* USE reports on causes of issues.
-* RED reports on user experience and is more likely to report symptoms of problems.
-* The best practice of alerting is to alert on symptoms rather than causes, so alerting should be done on RED dashboards.
+There are various approaches to selecting the key information to monitor in a large-scale setup such as a servier farm.
+It is important to understand the information you have, and what
 
 #### USE method <a href="#use-method" id="use-method"></a>
 
-USE stands for:
+The ["USE" Method](http://www.brendangregg.com/usemethod.html) focuses on
 
 * **Utilization -** Percent time the resource is busy, such as node CPU usage
 * **Saturation -** Amount of work a resource has to do, often queue length or node load
 * **Errors -** Count of error events
 
-![](https://www.brendangregg.com/USEmethod/usemethod\_flow.png)
+to provide an overview of the state of hardware resources in infrastructure, such as CPU, memory, and network devices.
 
-This method is best for hardware resources in infrastructure, such as CPU, memory, and network devices. For more information, refer to [The USE Method](http://www.brendangregg.com/usemethod.html).
-
-Example to show the **user CPU usage**:\
-\
+An example, to show **user CPU usage**:\
 Requirements:&#x20;
 
 * [nodeexporter](https://github.com/prometheus/node\_exporter) installed on machine
@@ -89,9 +78,7 @@ Set up your own [ethereum-validators-monitoring](https://github.com/lidofinance/
 
 #### The Four Golden Signals (4GS) <a href="#the-four-golden-signals" id="the-four-golden-signals"></a>
 
-The [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref\_monitoring\_golden-signals) suggests that if you can only measure four metrics of your user-facing system, focus on these four.
-
-This method is similar to the RED method, but it includes saturation.
+The [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref\_monitoring\_golden-signals), an alternative to the "RED" method, suggests four key metrics:
 
 * **Latency -** Time taken to serve a request
 * **Traffic -** How much demand is placed on your system
