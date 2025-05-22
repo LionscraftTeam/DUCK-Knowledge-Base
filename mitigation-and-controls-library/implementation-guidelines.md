@@ -26,8 +26,9 @@ sudo systemctl restart sshd
 
 ## Monitoring Guidelines
 
-There are various approaches to selecting the key information to monitor in a large-scale setup such as a servier farm.
-It is important to understand the information you have, and what
+It is important to understand the information you have, and when it makes sense to trigger alerts for further attention.
+There are various approaches to selecting the key information to monitor in a large-scale setup such as a server farm,
+including the following:
 
 #### USE method <a href="#use-method" id="use-method"></a>
 
