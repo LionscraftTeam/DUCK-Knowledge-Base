@@ -25,5 +25,4 @@ The knowledge base is being revised over the course of 2025, to help make it mor
 ## How can you contribute?
 
 You can provide any feedback, or comments through [a google form](https://forms.gle/RaUWtoKdNWivJb5R8),
-raising or commenting on issues or pull requests in [this github repository](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/),
-or through the [DUCK Telegram channel](@@).
+or raising or commenting on issues or pull requests in [this github repository](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/).
