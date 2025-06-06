@@ -26,31 +26,21 @@ sudo systemctl restart sshd
 
 ## Monitoring Guidelines
 
-When you have a lot to monitor, like a server farm, you need a strategy to decide what is important enough to monitor:
-
-A logical strategy allows you to make uniform dashboards and scale your observability platform more easily.
-
-#### Guidelines for usage <a href="#guidelines-for-usage" id="guidelines-for-usage"></a>
-
-* The USE method tells you how happy your machines are, the RED method tells you how happy your users are.
-* USE reports on causes of issues.
-* RED reports on user experience and is more likely to report symptoms of problems.
-* The best practice of alerting is to alert on symptoms rather than causes, so alerting should be done on RED dashboards.
+It is important to understand the information you have, and when it makes sense to trigger alerts for further attention.
+There are various approaches to selecting the key information to monitor in a large-scale setup such as a server farm,
+including the following:
 
 #### USE method <a href="#use-method" id="use-method"></a>
 
-USE stands for:
+The ["USE" Method](http://www.brendangregg.com/usemethod.html) focuses on
 
 * **Utilization -** Percent time the resource is busy, such as node CPU usage
 * **Saturation -** Amount of work a resource has to do, often queue length or node load
 * **Errors -** Count of error events
 
-![](https://www.brendangregg.com/USEmethod/usemethod\_flow.png)
+to provide an overview of the state of hardware resources in infrastructure, such as CPU, memory, and network devices.
 
-This method is best for hardware resources in infrastructure, such as CPU, memory, and network devices. For more information, refer to [The USE Method](http://www.brendangregg.com/usemethod.html).
-
-Example to show the **user CPU usage**:\
-\
+An example, to show **user CPU usage**:\
 Requirements:&#x20;
 
 * [nodeexporter](https://github.com/prometheus/node\_exporter) installed on machine
@@ -89,115 +79,13 @@ Set up your own [ethereum-validators-monitoring](https://github.com/lidofinance/
 
 #### The Four Golden Signals (4GS) <a href="#the-four-golden-signals" id="the-four-golden-signals"></a>
 
-According to the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref\_monitoring\_golden-signals), if you can only measure four metrics of your user-facing system, focus on these four.
-
-This method is similar to the RED method, but it includes saturation.
+The [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref\_monitoring\_golden-signals), an alternative to the "RED" method, suggests four key metrics:
 
 * **Latency -** Time taken to serve a request
 * **Traffic -** How much demand is placed on your system
 * **Errors -** Rate of requests that are failing
 * **Saturation -** How “full” your system is
 
-### Dashboard management maturity model <a href="#dashboard-management-maturity-model" id="dashboard-management-maturity-model"></a>
+#### Grafana dashboard management
 
-_Dashboard management maturity_ refers to how well-designed and efficient your dashboard ecosystem is. We recommend periodically reviewing your dashboard setup to gauge where you are and how you can improve.
-
-You should have optimised your dashboard management use with a consistent and thoughtful strategy. It requires maintenance, but the results are worth it.
-
-* Actively reducing sprawl.
-  * Regularly review existing dashboards to make sure they are still relevant.
-  * Only approved dashboards added to master dashboard list.
-  * Tracking dashboard use. If you’re an Enterprise user, you can take advantage of [Usage insights](https://grafana.com/docs/grafana/latest/dashboards/assess-dashboard-usage/).
-* Consistency by design.
-* Use scripting libraries to generate dashboards, ensure consistency in pattern and style.
-  * grafonnet (Jsonnet)
-  * grafanalib (Python)
-* No editing in the browser. Dashboard viewers change views with variables.
-* Browsing for dashboards is the exception, not the rule.
-* Perform experimentation and testing in a separate Grafana instance dedicated to that purpose, not your production instance. When a dashboard in the test environment is proven useful, then add that dashboard to your main Grafana instance.
-
-#### Before you begin <a href="#before-you-begin" id="before-you-begin"></a>
-
-Here are some principles to consider before you create a dashboard.
-
-**A dashboard should tell a story or answer a question**
-
-What story are you trying to tell with your dashboard? Try to create a logical progression of data, such as large to small or general to specific. What is the goal for this dashboard? (Hint: If the dashboard doesn’t have a goal, then ask yourself if you really need the dashboard.)
-
-Keep your graphs simple and focused on answering the question that you are asking. For example, if your question is “which servers are in trouble?”, then maybe you don’t need to show all the server data. Just show data for the ones in trouble.
-
-**Dashboards should reduce cognitive load, not add to it**
-
-_Cognitive load_ is basically how hard you need to think about something in order to figure it out. Make your dashboard easy to interpret. Other users and future you (when you’re trying to figure out what broke at 2AM) will appreciate it.
-
-Ask yourself:
-
-* Can I tell what exactly each graph represents? Is it obvious, or do I have to think about it?
-* If I show this to someone else, how long will it take them to figure it out? Will they get lost?
-
-**Have a monitoring strategy**
-
-It’s easy to make new dashboards. It’s harder to optimize dashboard creation and adhere to a plan, but it’s worth it. This strategy should govern both your overall dashboard scheme and enforce consistency in individual dashboard design.
-
-Refer to [Common observability strategies](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/#common-observability-strategies) and [Dashboard management maturity levels](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/#dashboard-management-maturity-model) for more information.
-
-**Write it down**
-
-Once you have a strategy or design guidelines, write them down to help maintain consistency over time. Check out this [Wikimedia runbook example](https://wikitech.wikimedia.org/wiki/Performance/Runbook/Grafana\_best\_practices).
-
-#### Best practices to follow <a href="#best-practices-to-follow" id="best-practices-to-follow"></a>
-
-* When creating a new dashboard, make sure it has a meaningful name.
-  * If you are creating a dashboard to play or experiment, then put the word `TEST` or `TMP` in the name.
-  * Consider including your name or initials in the dashboard name or as a tag so that people know who owns the dashboard.
-  * Remove temporary experiment dashboards when you are done with them.
-* If you create many related dashboards, think about how to cross-reference them for easy navigation. Refer to [Best practices for managing dashboards](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/#best-practices-for-managing-dashboards) for more information.
-* Grafana retrieves data from a data source. A basic understanding of [data sources](https://grafana.com/docs/grafana/latest/datasources/) in general and your specific is important.
-* Avoid unnecessary dashboard refreshing to reduce the load on the network or backend. For example, if your data changes every hour, then you don’t need to set the dashboard refresh rate to 30 seconds.
-* Use the left and right Y-axes when displaying time series with different units or ranges.
-* Add documentation to dashboards and panels.
-  * To add documentation to a dashboard, add a [Text panel visualization](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/text/) to the dashboard. Record things like the purpose of the dashboard, useful resource links, and any instructions users might need to interact with the dashboard. Check out this [Wikimedia example](https://grafana.wikimedia.org/d/000000066/resourceloader?orgId=1).
-  * To add documentation to a panel, edit the panel settings and add a description. Any text you add will appear if you hover your cursor over the small `i` in the top left corner of the panel.
-* Reuse your dashboards and enforce consistency by using [templates and variables](https://grafana.com/docs/grafana/latest/dashboards/variables/).
-* Be careful with stacking graph data. The visualizations can be misleading, and hide important data. We recommend turning it off in most cases.
-
-### Best practices for managing dashboards <a href="#best-practices-for-managing-dashboards" id="best-practices-for-managing-dashboards"></a>
-
-This page outlines some best practices to follow when managing Grafana dashboards.
-
-#### Before you begin <a href="#before-you-begin-1" id="before-you-begin-1"></a>
-
-Here are some principles to consider before you start managing dashboards.
-
-**Strategic observability**
-
-There are several common observability strategies. You should research them and decide whether one of them works for you or if you want to come up with your own. Either way, have a plan, write it down, and stick to it.
-
-Adapt your strategy to changing needs as necessary.
-
-**Maturity level**
-
-What is your dashboard maturity level? Analyze your current dashboard setup and compare it to the Dashboard management maturity model. Understanding where you are can help you decide how to get to where you want to be.
-
-#### Best practices to follow <a href="#best-practices-to-follow-1" id="best-practices-to-follow-1"></a>
-
-* Avoid dashboard sprawl, meaning the uncontrolled growth of dashboards. Dashboard sprawl negatively affects time to find the right dashboard. Duplicating dashboards and changing “one thing” (worse: keeping original tags) is the easiest kind of sprawl.
-  * Periodically review the dashboards and remove unnecessary ones.
-  * If you create a temporary dashboard, perhaps to test something, prefix the name with `TEST:` . Delete the dashboard when you are finished.
-* Copying dashboards with no significant changes is not a good idea.
-  * You miss out on updates to the original dashboard, such as documentation changes, bug fixes, or additions to metrics.
-  * In many cases copies are being made to simply customize the view by setting template parameters. This should instead be done by maintaining a link to the master dashboard and customizing the view with [URL parameters](https://grafana.com/docs/grafana/latest/panels-visualizations/configure-data-links/#data-link-variables).
-* When you must copy a dashboard, clearly rename it and _do not_ copy the dashboard tags. Tags are important metadata for dashboards that are used during search. Copying tags can result in false matches.
-* Maintain a dashboard of dashboards or cross-reference dashboards. This can be done in several ways:
-  * Create dashboard links, panel, or data links. Links can go to other dashboards or to external systems. For more information, refer to [Manage dashboard links](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/manage-dashboard-links/).
-  * Add a [Dashboard list panel](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/dashboard-list/). You can then customize what you see by doing tag or folder searches.
-  * Add a [Text panel](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/text/) and use markdown to customize the display.
-
-Source: Grafana Docs
-
-
-
-
-
-
-
+The [best practices for Grafana dashboards](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/) offer a wealth of advice on selecting and managing information dashboards to provide useful actionable information.
