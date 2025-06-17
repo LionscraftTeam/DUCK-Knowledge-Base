@@ -4,7 +4,7 @@
 
 ## What is D.U.C.K.?
 
-The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Risk Framework](risk-framework/risk-framework.md), [Mitigation & Controls Library](mitigation-and-controls-library/mitigation-and-controls-library), and the [Communications Toolkit](communications-toolkit/communications-toolkit), Node Operators have access to assets that they can customize based on their own unique setup and operations.
+The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Risk Framework](risk-framework/risk-framework.md), [Mitigation & Controls Library](mitigation-and-controls-library/mitigation-and-controls-library.md), and the [Communications Toolkit](communications-toolkit/communications-toolkit.md), Node Operators have access to assets that they can customize based on their own unique setup and operations.
 
 ## Why is D.U.C.K relevant?
 
