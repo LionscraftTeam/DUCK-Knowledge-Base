@@ -214,7 +214,7 @@ Connectivity issues leading to reduced rewards.
   <td id="risk-dow-11">DOW11</td>
   <td>Software</td>
   <td>Software Bug in the Validator Client</td>
-  <td id="risk-dow-ntime or accidental interpretation of dishonest behavior">DOWntime or accidental interpretation of dishonest behavior</td>
+  <td>Downtime or accidental interpretation of dishonest behavior</td>
 </tr>
 <tr>
   <td id="risk-dow-12">DOW12</td>
@@ -250,7 +250,7 @@ Connectivity issues leading to reduced rewards.
   <td id="risk-dow-17">DOW17</td>
   <td>People</td>
   <td>Malicious Ex-Employee intentionally causes a downtime incident</td>
-  <td>A Ex-Employee can still have access to the system when his acces is not blocked or removed</td>
+  <td>A Ex-Employee can still have access to the system when his access is not blocked or removed</td>
 </tr>
 <tr>
   <td id="risk-dow-18">DOW18</td>
@@ -641,8 +641,8 @@ Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-
 Define Incident Response Plans (ICR) for all specific [risks](risks/ "mention") and store them in a central location with access for all relevant employees. ICRs establish plans for managing security incidents and events, and offer guidance for employees or incident responders who believe they have discovered, or are responding to, a security incident. Ensure that relevant employees are aware of the location. Simulations of an Incident Response Plan should be conducted at least once a year.
 
 <div class="info">
-Incident Response Plan template can be found here:\
-[https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50\_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50\_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
+Incident Response Plan template can be found here:
+[https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
 </div>
 
 ## 3. Disaster Recovery Plan
@@ -652,7 +652,7 @@ A Disaster Recovery Plan gives guidance on recovering one or more information sy
 <div class="info">
 Disaster Recovery Plan templates can be found here:
 
-* [National Institute of Standards & Technology Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1\_cp\_template\_high\_impact\_system.docx)
+* [National Institute of Standards & Technology Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1_cp_template_high_impact_system.docx)
 * [#automation](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md#automation "mention")
 </div>
 
@@ -685,6 +685,7 @@ Assess the losses directly linked to the slashing event. This can include:
 * Missed rewards
 * Possible recoveries from insurance payments
 * The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
+
 
 **Direct Monetary Losses from a Downtime Event**\
 Assess the losses directly from the downtime event. This can include:
@@ -828,11 +829,10 @@ Most of the best practices that optimize up-time, access control and general sta
 When analyzing the scope and the respective identified risks, we have found the best fit being a combination of control criteria from three frameworks:
 
 * [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-* [ISO 27001](https://www.iso.org/standard/27001)
-* [AICPA SOC2 Trust Services criteria](https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022)
+* [ISO 27001](#iso-27001)
+* [SOC2](#soc2)
 
 As with every audit, we put together the control criteria which are [material](https://us.aicpa.org/content/dam/aicpa/research/standards/auditattest/downloadabledocuments/au-c-00320.pdf) in the context of protecting node operators from their specific risks.
-
 
 # Mitigation Strategies
 
@@ -1264,108 +1264,108 @@ This section contains controls by framework that were identified to be material 
 <td><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">A01:2022: Broken Access Control</a></td></tr>
 <tr>
 <td>OWASP</td>
-<td><a href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF)/">A10:2021: Server Side Request Forgery</a></td></tr>
+<td><a href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF%29/">A10:2021: Server Side Request Forgery</a></td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 5.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 6.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 6.3</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 6.7</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.3</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.5</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 8.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 8.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 8.3</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 9.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 9.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>A 1.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>PI 1.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>PI 1.3</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.15</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.16</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.17</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.18</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 7</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.2</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.7</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.9</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.10</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.16</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.18</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.21</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.22</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.25</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.29</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.30</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.31</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.32</td></tr></tbody></table>
 
 ## OWASP
@@ -1388,7 +1388,7 @@ Special considerations:
 
 **References:**
 
-* [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01\_2021-Broken\_Access\_Control/)
+* [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
 
 #### Examples for best practices:
 
@@ -1419,7 +1419,7 @@ Functionality to look out for when creating your application is:
 
 **References:**
 
-* [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10\_2021-Server-Side\_Request\_Forgery\_\(SSRF\)/)
+* [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_\(SSRF\)/)
 
 **Examples for best practices:**
 
@@ -1427,7 +1427,7 @@ Functionality to look out for when creating your application is:
 * In the Apache web-server, one can control the request size of different pieces of the request:
   * [LimitRequestBody](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestbody)
   * [LimitRequestFields](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestfields)
-* In order to protect oneself from bad redirects, one can define proper [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) headers and a [ContentSecurityPolicy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). Both are set in header fileds of your Web server or load balancer.
+* In order to protect oneself from bad redirects, one can define proper [[CORS](#cors)] headers and a ContentSecurityPolicy[[CSP](#csp)]. Both are set in header fileds of your Web server or load balancer.
 
 <div class="info">
 **Links to risks**
@@ -1859,7 +1859,7 @@ Main outline from the COSO principles:
 
 **Examples for best practices:**
 
-* Use [schema](https://json-schema.org) and [schema evolution techniques](https://en.wikipedia.org/wiki/Schema\_evolution) to keep your data-flow clean.
+* Use [schema](https://json-schema.org) and [schema evolution techniques](https://en.wikipedia.org/wiki/Schema_evolution) to keep your data-flow clean.
 * Always define minimum and maximum input sizes and MIME types ([Microsoft IIS example](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/mimemap)).
 
 <div class="info">
@@ -1925,7 +1925,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 5.16
+* [ISO 27001](#iso-27001) Annex A 5.16
 
 **Examples for best practices:**
 
@@ -1952,7 +1952,7 @@ Main outline of the Information security controls reference:
 
 **Examples for best practices:**
 
-* Use of an [Single Sign on](https://en.wikipedia.org/wiki/Single\_sign-on) is preferred, and from there, all other secrets should be released to authorized users through e.g. [certificates](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Certificate-based\_Authentication) and/or [vault mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates).
+* Use of an [Single Sign on](https://en.wikipedia.org/wiki/Single_sign-on) is preferred, and from there, all other secrets should be released to authorized users through e.g. [certificates](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Certificate-based_Authentication) and/or [vault mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates).
 
 <div class="info">
 **Links to Risks:**
@@ -1969,7 +1969,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 5.18
+* [ISO 27001](#iso-27001) Annex A 5.18
 
 **Examples for best practices:**
 
@@ -2025,8 +2025,8 @@ Main outline of the Information security controls reference:
 
 **Examples for best practices:**
 
-* Disable privilege escalation mechanisms ([like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container\_exec/))
-* [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server\_admin/topics/users/con-user-impersonation.adoc)
+* Disable privilege escalation mechanisms ([like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container_exec/))
+* [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server_admin/topics/users/con-user-impersonation.adoc)
 
 <div class="info">
 **Links to Risks:**
@@ -2090,7 +2090,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.10
+* [ISO 27001](#iso-27001) Annex A 8.10
 
 **Examples for best practices:**
 
@@ -2112,7 +2112,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.16
+* [ISO 27001](#iso-27001) Annex A 8.16
 
 **Examples for best practices:**
 
@@ -2132,7 +2132,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.18
+* [ISO 27001](#iso-27001) Annex A 8.18
 
 **Examples for best practices:**
 
@@ -2155,7 +2155,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.21
+* [ISO 27001](#iso-27001) Annex A 8.21
 
 **Examples for best practices:**
 
@@ -2177,7 +2177,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.22
+* [ISO 27001](#iso-27001) Annex A 8.22
 
 **Examples for best practices:**
 
@@ -2200,7 +2200,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.25
+* [ISO 27001](#iso-27001) Annex A 8.25
 
 **Examples for best practices:**
 
@@ -2227,7 +2227,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.29
+* [ISO 27001](#iso-27001) Annex A 8.29
 
 **Examples  for best practices:**
 
@@ -2252,7 +2252,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.30
+* [ISO 27001](#iso-27001) Annex A 8.30
 
 **Examples for best practices:**
 
@@ -2273,7 +2273,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.31
+* [ISO 27001](#iso-27001) Annex A 8.31
 
 **Examples for best practices:**
 
@@ -2298,7 +2298,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.32
+* [ISO 27001](#iso-27001) Annex A 8.32
 
 **Examples for best practices:**
 
@@ -2312,3 +2312,59 @@ Main outline of the Information security controls reference:
 * [DOW11](#risk-dow-11)
 * [GIR25](#risk-gir-25)
 </div>
+
+## References
+
+#### Specifications
+
+### [CSP]
+
+"Content Security Policy", Mozilla Corporation. https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+
+### [CORS]
+
+"Cross-Origin Resource Sharing (CORS)", Mozilla Corporation. https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+### [ISO 27001]
+
+ISO IEC 27001:2022 "Information security, cybersecurity and privacy protection — Information security management systems — Requirements" 3rd Ed. ISO, 2022. https://www.iso.org/standard/27001
+
+### [SOC2]
+
+"AICPA SOC2® Trust Services criteria", AICPA. https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022
+
+More:
+
+- [CVE entries.](https://cve.mitre.org)
+- [NIST SP 800-34 Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1_cp_template_high_impact_system.docx)
+- [NIST SP 800-61](https://csrc.nist.gov/pubs/sp/800/61/r2/final)
+- [NIST SP 800-115](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/): [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/), [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF%29/)
+- [RFC 1918](https://www.rfc-editor.org/rfc/rfc1918)
+- [SBOM](https://www.cisa.gov/sbom)
+- [@Shreyashere Blog post: Pre-mortems](https://medium.com/@shreyashere/how-to-use-pre-mortems-to-prevent-problems-blunders-and-disasters-6ecc6df6e22a)
+- , [AICPA - material control criteria](https://us.aicpa.org/content/dam/aicpa/research/standards/auditattest/downloadabledocuments/au-c-00320.pdf)
+
+### Tools:
+
+- Apache web-server [LimitRequestBody](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestbody), [LimitRequestFields](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestfields)
+- [AWS WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html), [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)
+- [CIS benchmarks](https://www.cisecurity.org)
+- [Cognito](https://aws.amazon.com/cognito/), [Cognito's Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html)
+- [CoGuard](https://www.coguard.io)
+- [docker-compose](https://docs.docker.com/compose/) [like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container_exec/))
+- [DoppelBuster](https://github.com/SimplyStaking/DoppelBuster)
+- [ELK stack](https://www.elastic.co/elastic-stack/)
+- [Grafana](https://grafana.com), [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
+- [Hibernate](https://hibernate.org/orm/documentation/getting-started/)
+- [Keycloak](https://www.keycloak.org) [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server_admin/topics/users/con-user-impersonation.adoc)
+- [Kubernetes Cluster Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+- [Liquibase](https://www.liquibase.org)
+- Microsoft IIS [Microsoft IIS (input limits) example](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/mimemap), [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/)
+- [minikube](https://minikube.sigs.k8s.io/docs/)
+- [shred](https://man.archlinux.org/man/shred.1.en)
+- [SQLAlchemy](https://www.sqlalchemy.org)
+- [Trivy](https://github.com/aquasecurity/trivy)
+- [TypeORM](https://typeorm.io)
+- [vault SSH certificate mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates)
+- [Zabbix reference](https://www.zabbix.com/documentation/6.4/en/manual/appendix/items/activepassive?hl=CPU%2Cload)
