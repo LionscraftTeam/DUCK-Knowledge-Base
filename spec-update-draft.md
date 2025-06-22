@@ -2331,7 +2331,7 @@ ISO IEC 27001:2022 "Information security, cybersecurity and privacy protection �
 
 ### [SOC2]
 
-"AICPA SOC2® Trust Services criteria", AICPA. https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022
+"2017 Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy (With Revised Points of Focus — 2022)" AICPA 2022. https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022 (requires AICPA membership)
 
 More:
 
