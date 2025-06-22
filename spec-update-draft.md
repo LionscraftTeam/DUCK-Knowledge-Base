@@ -973,6 +973,10 @@ The principle to follow is "least privilege". This is usually achieved by using 
 
 Each user should be assigned roles, and some are temporary. There should be a clear lifetime of a user, that is automatically enforced and can be extended when needed.  On- and off-boarding should be simple, and every piece of the infrastructure should be secured from unauthenticated and unauthorized access.
 
+* Rules to control physical and logical access to information needs to be in place.
+* Role Based Access Control.
+* Implement an authentication mechanism into every service.
+
 <div class="info">
 **Links to risks:**
 
@@ -1011,6 +1015,7 @@ Special considerations:
 
 #### Equivalent Controls
 
+* [ISO27001](#iso27001) Annex A 5.15
 * [SOC2](#soc2) Trust services Criteria CC 6.1
 * [SOC2](#soc2) Trust services Criteria CC 6.3
 * [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
@@ -1122,11 +1127,31 @@ Use password policies at every layer of the infrastructure (i.e. DUCK123 should 
 
 ### Prevent physical access to non-authorized persons
 
-This is mainly for bare-metal installations. If you host your nodes on-premise, ensure that physical access to the servers is restricted through a key-mechanism. Ideally, any entry and exit should be logged.
+Ensure that physical access to the servers is restricted through a key-mechanism. Ideally, any entry and exit should be logged.
+
+* Protect physical areas and assets.
+* Control entry to physical assets.
+* All physical access to premises needs to be monitored.
+* As much as possible, protect against environmental threats.
+* Also secure off-site assets, if present.
+* Supporting utilities, such as electricity and internet access, need to be protected.
+* Maintain all equipment throughout a defined life-cycle.
+* Enforce a strict rule of disposal and re-use of equipment.
+
+**References:**
+
+* ISO27001 Annex A 7
+
+**Examples for best practices:**
+
+* Camera systems at doors.
+* Segregation of areas where people have access to.
+* Thorough destruction of storage media.
 
 <div class="info">
-**Links to risks:**
+**Links to Risks:**
 
+* [DOW2](#risk-dow-2)
 * [DOW4](#risk-dow-4)
 * [KEC6](#risk-kec-6)
 * [KEC8](#risk-kec-8)
@@ -1882,18 +1907,6 @@ Main outline from the COSO principles:
 ## ISO 27001
 
 
-Main outline of the Information security controls reference:
-
-* Rules to control physical and logical access to information needs to be in place.
-
-**References:**
-
-* ISO27001 Annex A 5.15
-
-**Examples for best practices:**
-
-* Role Based Access Control.
-* Implement an authentication mechanism into every service.
 
 <div class="info">
 **Links to Risks:**
@@ -1969,36 +1982,7 @@ Main outline of the Information security controls reference:
 * [SLS9](#risk-sls-9)
 </div>
 
-### Physical Controls
 
-Main outline of the Information security controls reference:
-
-This is specific for the case where node operators are running their infrastructure on bare-metal and on their own premises.
-
-* Protect physical areas and assets.
-* Control entry to physical assets.
-* All physical access to premises needs to be monitored.
-* As much as possible, protect against environmental threats.
-* Also secure off-site assets, if present.
-* Supporting utilities, such as electricity and internet access, need to be protected.
-* Maintain all equipment throughout a defined life-cycle.
-* Enforce a strict rule of disposal and re-use of equipment.
-
-**References:**
-
-* ISO27001 Annex A 7
-
-**Examples for best practices:**
-
-* Camera systems at doors.
-* Segregation of areas where people have access to.
-* Thorough destruction of storage media.
-
-<div class="info">
-**Links to Risks:**
-
-* [DOW2](#risk-dow-2)
-</div>
 
 ### Privileged access rights
 
