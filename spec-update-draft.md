@@ -214,7 +214,7 @@ Connectivity issues leading to reduced rewards.
   <td id="risk-dow-11">DOW11</td>
   <td>Software</td>
   <td>Software Bug in the Validator Client</td>
-  <td id="risk-dow-ntime or accidental interpretation of dishonest behavior">DOWntime or accidental interpretation of dishonest behavior</td>
+  <td>Downtime or accidental interpretation of dishonest behavior</td>
 </tr>
 <tr>
   <td id="risk-dow-12">DOW12</td>
@@ -250,7 +250,7 @@ Connectivity issues leading to reduced rewards.
   <td id="risk-dow-17">DOW17</td>
   <td>People</td>
   <td>Malicious Ex-Employee intentionally causes a downtime incident</td>
-  <td>A Ex-Employee can still have access to the system when his acces is not blocked or removed</td>
+  <td>A Ex-Employee can still have access to the system when his access is not blocked or removed</td>
 </tr>
 <tr>
   <td id="risk-dow-18">DOW18</td>
@@ -584,75 +584,23 @@ Risk related to running specific services.
 
 Processes and actions that should be defined to address risks and that cover the concrete procedures in case of related incidents. &#x20;
 
-## 1. Risk Monitoring
-
-Leverage monitoring dashboards or systems to identify the risk and gain relevant data.
-
-### Beacon Chain Monitoring
-
-* **Slashing Events:** Monitor the beacon chain for any slashing events.
-* **Anti-Slashing Database:** Regularly poll the local node to ensure the anti-slashing database is enabled and functioning correctly.
-* **Impact of Slashing:** Assess and monitor the broader impact of any slashing incidents on the network.
-* **Relay List Monitoring:** Monitor the relay list for availability metrics and load balance capabilities between various relayers for downtime conditions.
-* **Chain Reorganizations:** Track events and causes of chain reorganizations&#x20;
-* **Non-finalized Events:** Monitor events preventing the consensus layer from confirming finality
-* **Special Software Conditions:** Monitor major software upgrades requiring specific durations and   events that will conclude the upgrade
-
-### Node and System Health
-
-* **Node Health Metrics:** Monitor key metrics like CPU, memory, restarts, and uptime of nodes.
-* **System Configuration:** Monitor system configuration settings in real-time and continuously.
-* **Key Usages:** Track the usage of critical system keys.
-* **App-specific:** App specific metrics  (e.g. metrics for Dirk & Vouch)
-
-### Security and Compliance
-
-* **Access Control and Logs:** Keep an eye on access controls to nodes and abnormal configuration changes.
-* **Phishing and Endpoint Protection:** Monitor for phishing attacks and ensure the security of endpoint protection systems, both for employee devices and infrastructure nodes.
-* **Bastion Nodes:** If applicable, monitor bastion or connection nodes.
-* **Suspicious Internal Interactions:** Watch for any suspicious internal interactions with infrastructure, cloud security platforms, or network monitoring solutions.
-* **Access Patterns and Configurations:** Check for unusual access patterns and the configurations of VPNs and 2FA systems.
-* **Relay Compliance:** Monitor relay compliance aspects and availability metrics.
-
-### Upgrade and Code Management
-
-* **Upgrade Process:** Monitor the upgrade process, including client code source, notification channels, bug reports, and community disclosures.
-* **Customized Code in Testnet:** Monitor any new custom code deployed in the testnet.
-
-### Hardware and Network
-
-* **Baremetal and Network Equipment Health:** Monitor the health of bare metals and networking equipment, including internet and peering connectivity.
-* **Predictive Models:** Use predictive models for future malfunctions and equipment replacement needs.
-* **Capacity and Resource Usage:** Track capacity usage, processing memory, and CPU.
-* **Peering Connectivity:** Monitor both internal and external network peering connectivity.
-* **Firewall Configuration and Metrics:** Keep an eye on firewall configuration changes or unexpected increases in drop metrics.
-
-### Cloud and Infrastructure
-
-* **Cloud Monitoring Solutions:** Utilize cloud monitoring solutions to keep track of uptime and internal issues.
-* **Cloud Service Notifications:** Stay informed about cloud service announcements regarding expected downtime and maintenance.
-
-<div class="info">
-Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md "mention") for tool examples to perform the monitoring of some of the metrics mentioned above.
-</div>
-
-## 2. Incident Response Plan
+## 1.  Incident Response Plan
 
 Define Incident Response Plans (ICR) for all specific [risks](risks/ "mention") and store them in a central location with access for all relevant employees. ICRs establish plans for managing security incidents and events, and offer guidance for employees or incident responders who believe they have discovered, or are responding to, a security incident. Ensure that relevant employees are aware of the location. Simulations of an Incident Response Plan should be conducted at least once a year.
 
 <div class="info">
-Incident Response Plan template can be found here:\
-[https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50\_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50\_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
+Incident Response Plan template can be found here:
+[https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
 </div>
 
-## 3. Disaster Recovery Plan
+## 2. Disaster Recovery Plan
 
 A Disaster Recovery Plan gives guidance on recovering one or more information systems at an alternate facility in response to a major hardware or software failure or destruction of facilities. Simulations of a Disaster Recovery Plan should be conducted at least once a year in a test environment.
 
 <div class="info">
 Disaster Recovery Plan templates can be found here:
 
-* [National Institute of Standards & Technology Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1\_cp\_template\_high\_impact\_system.docx)
+* [National Institute of Standards & Technology Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1_cp_template_high_impact_system.docx)
 * [#automation](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md#automation "mention")
 </div>
 
@@ -685,6 +633,7 @@ Assess the losses directly linked to the slashing event. This can include:
 * Missed rewards
 * Possible recoveries from insurance payments
 * The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
+
 
 **Direct Monetary Losses from a Downtime Event**\
 Assess the losses directly from the downtime event. This can include:
@@ -828,11 +777,10 @@ Most of the best practices that optimize up-time, access control and general sta
 When analyzing the scope and the respective identified risks, we have found the best fit being a combination of control criteria from three frameworks:
 
 * [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-* [ISO 27001](https://www.iso.org/standard/27001)
-* [AICPA SOC2 Trust Services criteria](https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022)
+* [ISO 27001](#iso-27001)
+* [SOC2](#soc2)
 
 As with every audit, we put together the control criteria which are [material](https://us.aicpa.org/content/dam/aicpa/research/standards/auditattest/downloadabledocuments/au-c-00320.pdf) in the context of protecting node operators from their specific risks.
-
 
 # Mitigation Strategies
 
@@ -1018,12 +966,12 @@ Key rotation and a proper process around it is key to protect one's infrastructu
 </div>
 
 ## Access Management
-
+@@
 ### Access controls & access management
 
-The principle to follow is "least privilege". This is usually achieved by using an enforcing role-based access control, and create fine-grained roles throughout all processes of an organization.
+The principle to follow is "least privilege". This is usually achieved by using an enforcing role-based access control, with fine-grained roles defined throughout all processes of an organization.
 
-Each user should be assigned roles, and some are temporary. There should be a clear lifetime of a user, that is automatically enforced and can be extended when needed.
+Each user should be assigned roles, and some are temporary. There should be a clear lifetime of a user, that is automatically enforced and can be extended when needed.  On- and off-boarding should be simple, and every piece of the infrastructure should be secured from unauthenticated and unauthorized access.
 
 <div class="info">
 **Links to risks:**
@@ -1034,6 +982,94 @@ Each user should be assigned roles, and some are temporary. There should be a cl
 * [GIR1](#risk-gir-1)
 * [GIR7](#risk-gir-7)
 * [GIR22](#risk-gir-22)
+</div>
+
+
+When it comes to access control, there are three pillars that need to be considered:
+
+* Authentication: Ensure that no service accepts requests without some form of authentication.
+* Authorization: Clearly define who can read/write/update/delete resources. Ideally, this is not done on a per-user basis, but on a per-role basis.
+* Audit: Ensure that all access is logged so that you can alert on anomalies. Especially login failures should be logged.
+
+Main outline from the COSO principles:
+
+1. Keep an inventory of information assets
+2. Restrict Logical Access — Logical access to information assets, should be restricted through the use of access control software and rule sets.
+3. Use authentication systems.
+4. Network Segmentation — Restrict access to nodes to a minimum set of IPs.
+5. Manages Points of Access — Access to nodes inside the segmented area need to be controlled with authentication and authorization methods.
+6. Proper credentials management for infrastructure software — A clear definition of each credential life-time is established and enforced.
+7. Protects Encryption Keys — Processes are in place to protect encryption keys for their lifetime.
+
+Special considerations:
+
+* Limit the IP sources for access.
+* Disable meta-data serving through public endpoints (like what server is running in what version).
+* Limit the outbound traffic of a node that runs a certain service.
+* Apply rate limits to ensure that internal services cannot unintentionally DDos each other.
+* Where possible apply the use of authentication tokens that have a limited lifetime.
+
+#### Equivalent Controls
+
+* [SOC2](#soc2) Trust services Criteria CC 6.1
+* [SOC2](#soc2) Trust services Criteria CC 6.3
+* [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
+
+**Examples for best practices:**
+
+* Creation and continuous analysis of Software Bill of Materials ([SBOM](https://www.cisa.gov/sbom)).
+* Use of Clients, roles and groups when using [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html).
+* Have an internal virtual private network and only have well-defined endpoints be accessible from the web.
+* Uses of vault systems to manage credentials and encryption keys. Like AWS KMS.
+
+<div class="info">
+**Links to risks:**
+
+* [DOW7](#risk-dow-7)
+* [KEC4](#risk-kec-4)
+* [GIR9](#risk-gir-9)
+* [GIR22](#risk-gir-22)
+</div>
+
+### Implement least privilege
+
+This mitigation goes into the authorization piece of the different users and software pieces. The principle of least access should be considered, as much as possible. Putting measures in place that restrict access to certain groups as an afterthought can become fairly expensive.
+
+Main outline from the COSO principles:
+
+1. Creates or Modifies Access — Processes are in place to create or modify access.
+2. Quick removal of access when needed
+3. Use Role-based access control (RBAC)
+4. Review of roles and permissions on a regular basis.
+
+**Examples for best practices:**
+
+* Credentials rotation needs to be in place to ensure that there is no interruption in the service when it is done.
+* Off-boarding of a terminated employee should not take more than an hour. Ideally, one would only disable them inside a single-sign-on service such as [Cognito](https://aws.amazon.com/cognito/) or [Keycloak](https://www.keycloak.org).
+* Tools need to be in place to analyze the permissions of certain users/programs and determine if these are too wide.
+* Use of roles on the API endpoint level to determine the correct authorization.
+
+<div class="info">
+**Links to risks:**
+
+* [KEC11](#risk-kec-11)
+* [GIR1](#risk-gir-1)
+* [KEC8](#risk-kec-8)
+* [GIR25](#risk-gir-25)
+</div>
+
+
+#### Examples for best practices:
+
+* [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/) Observe how different authentication methods are possible to be set there. `anonymousAuthentication` would allow anyone to access as `anonymous`, which is rarely the intention except for the starting page. `basicAuthentication` is better than nothing, but makes user management not scalable. `clientCertificateMappingAuthentication` and `digestAuthentication` are the better ways to also implement RBAC.
+
+<div class="info">
+**Links to risks:**
+
+* [GIR1](#risk-gir-1)
+* [GIR5](#risk-gir-5)
+* [GIR7](#risk-gir-7)
+* [GIR9](#risk-gir-9)
 </div>
 
 ### Least Privilege
@@ -1098,7 +1134,7 @@ This is mainly for bare-metal installations. If you host your nodes on-premise, 
 
 ## Development and Update Process
 
-### Testing and review of all changes to infrastructure code&#x20;
+### Testing and review of all changes to infrastructure code
 
 Anything on the infrastructure should be captured in a code repository, and changes managed through a versioning system such as Git. No direct push to the main branch should be possible; everything should go through pull requests and review.
 
@@ -1206,7 +1242,66 @@ Analyzing images for potential CVEs is simple nowadays (use e.g. [Trivy](https:/
 * [GIR17](#risk-gir-17)
 </div>
 
-## Monitoring
+## Monitoring and Alerting
+
+Leverage monitoring dashboards or systems to identify risks and gain relevant data.
+
+Monitoring is present in almost all compliance and security frameworks.
+
+It is crucial that not only high level business functions are monitored, but also correct functionality of all containers. In particular, proper log collection allows to dynamically verify that e.g. a slashing database ist actually being used, and used by the right signer.
+
+Main outline from the COSO principles:
+
+* Implements Detection Policies, Procedures, and Tools
+* Design and improve on Detection Measures — Ideally capture unauthorized access, suspicios traffic, etc.
+* Implement filters to not even let suspicious requests contact the back-end.
+* Check frequently if detection tools are working correctly.
+* Have one or more centralized dashboards to aggregate the data and present it in a digestible way to a human observer.
+
+
+### Beacon Chain Monitoring
+
+* **Slashing Events:** Monitor the beacon chain for any slashing events.
+* **Anti-Slashing Database:** Regularly poll the local node to ensure the anti-slashing database is enabled and functioning correctly.
+* **Impact of Slashing:** Assess and monitor the broader impact of any slashing incidents on the network.
+* **Relay List Monitoring:** Monitor the relay list for availability metrics and load balance capabilities between various relayers for downtime conditions.
+* **Chain Reorganizations:** Track events and causes of chain reorganizations&#x20;
+* **Non-finalized Events:** Monitor events preventing the consensus layer from confirming finality
+* **Special Software Conditions:** Monitor major software upgrades requiring specific durations and   events that will conclude the upgrade
+
+### Node and System Health
+
+* **Node Health Metrics:** Monitor key metrics like CPU, memory, restarts, and uptime of nodes.
+* **System Configuration:** Monitor system configuration settings in real-time and continuously.
+* **Key Usages:** Track the usage of critical system keys.
+* **App-specific:** App specific metrics  (e.g. metrics for Dirk & Vouch)
+
+### Security and Compliance
+
+* **Access Control and Logs:** Keep an eye on access controls to nodes and abnormal configuration changes.
+* **Phishing and Endpoint Protection:** Monitor for phishing attacks and ensure the security of endpoint protection systems, both for employee devices and infrastructure nodes.
+* **Bastion Nodes:** If applicable, monitor bastion or connection nodes.
+* **Suspicious Internal Interactions:** Watch for any suspicious internal interactions with infrastructure, cloud security platforms, or network monitoring solutions.
+* **Access Patterns and Configurations:** Check for unusual access patterns and the configurations of VPNs and 2FA systems.
+* **Relay Compliance:** Monitor relay compliance aspects and availability metrics.
+
+### Upgrade and Code Management
+
+* **Upgrade Process:** Monitor the upgrade process, including client code source, notification channels, bug reports, and community disclosures.
+* **Customized Code in Testnet:** Monitor any new custom code deployed in the testnet.
+
+### Hardware and Network
+
+* **Baremetal and Network Equipment Health:** Monitor the health of bare metals and networking equipment, including internet and peering connectivity.
+* **Predictive Models:** Use predictive models for future malfunctions and equipment replacement needs.
+* **Capacity and Resource Usage:** Track capacity usage, processing memory, and CPU.
+* **Peering Connectivity:** Monitor both internal and external network peering connectivity.
+* **Firewall Configuration and Metrics:** Keep an eye on firewall configuration changes or unexpected increases in drop metrics.
+
+### Cloud and Infrastructure
+
+* **Cloud Monitoring Solutions:** Utilize cloud monitoring solutions to keep track of uptime and internal issues.
+* **Cloud Service Notifications:** Stay informed about cloud service announcements regarding expected downtime and maintenance.
 
 ### Logging/Alerting at all levels of the infrastructure
 
@@ -1221,12 +1316,32 @@ Every component of your node operation is producing logs. These should be captur
 The alert systems should be automatically set up to take actions such as shutting nodes down (nuking).
 
 <div class="info">
-**Links to risks:**
+Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md "mention") for tool examples to perform the monitoring of some of the metrics mentioned above.
+
+
+* Cognito's [Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html).
+* Filtering and anaysis of anomalies can be done in AWS using the [WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html).
+* An example for monitoring software is the [ELK stack](https://www.elastic.co/elastic-stack/).
+* A very common centralized dashboard is [Grafana](https://grafana.com) - an example of [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
+
+</div>
+
+
+<div class="info">
+#### Relevant DUCK risks:
 
 * [SLS8](#risk-sls-8)
 * [SLS16](#risk-sls-16)
 * [DOW6](#risk-dow-6)
 * [DOW15](#risk-dow-15)
+* [GIR4](#risk-gir-4)
+* [GIR13](#risk-gir-13)
+
+#### Equivalent External Controls
+
+* [SOC2](#soc2) Trust Services Criteria CC 7.2
+* [ISO 27001](#iso-27001) Annex A 8.16
+
 </div>
 
 ## General Measures
@@ -1264,144 +1379,112 @@ This section contains controls by framework that were identified to be material 
 <td><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">A01:2022: Broken Access Control</a></td></tr>
 <tr>
 <td>OWASP</td>
-<td><a href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF)/">A10:2021: Server Side Request Forgery</a></td></tr>
+<td><a href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF%29/">A10:2021: Server Side Request Forgery</a></td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 5.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 6.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 6.3</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 6.7</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.3</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 7.5</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 8.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 8.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 8.3</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 9.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>CC 9.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>A 1.1</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>PI 1.2</td></tr>
 <tr>
-<td>SOC2 Trust Services Criteria</td>
+<td>[SOC2](#soc2)</td>
 <td>PI 1.3</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.15</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.16</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.17</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 5.18</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 7</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.2</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.7</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.9</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.10</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.16</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.18</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.21</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.22</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.25</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.29</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.30</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.31</td></tr>
 <tr>
-<td>ISO 27001 Information security controls reference</td>
+<td>[ISO 27001](#iso-27001) Information security controls reference</td>
 <td>Annex A 8.32</td></tr></tbody></table>
 
 ## OWASP
 
-### Access Control mitigations
-
-When it comes to access control, there are three pillars that need to be considered:
-
-* Authentication: Ensure that no service accepts requests without some form of authentication.
-* Authorization: Clearly define who can read/write/update/delete resources. Ideally, this is not done on a per-user basis, but on a per-role basis.
-* Audit: Ensure that all access is logged so that you can alert on anomalies. Especially login failures should be logged.
-
-Special considerations:
-
-* Limit the IP sources for access.
-* Disable meta-data serving through public endpoints (like what server is running in what version).
-* Limit the outbound traffic of a node that runs a certain service.
-* Apply rate limits to ensure that internal services cannot unintentionally DDos each other.
-* Where possible apply the use of authentication tokens that have a limited lifetime.
-
-**References:**
-
-* [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01\_2021-Broken\_Access\_Control/)
-
-#### Examples for best practices:
-
-* [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/) Observe how different authentication methods are possible to be set there. `anonymousAuthentication` would allow anyone to access as `anonymous`, which is rarely the intention except for the starting page. `basicAuthentication` is better than nothing, but makes user management not scalable. `clientCertificateMappingAuthentication` and `digestAuthentication` are the better ways to also implement RBAC.
-
-<div class="info">
-**Links to risks:**
-
-* [GIR1](#risk-gir-1)
-* [GIR5](#risk-gir-5)
-* [GIR7](#risk-gir-7)
-* [GIR9](#risk-gir-9)
-</div>
 
 ### Server-side request forgery mitigations
 
@@ -1419,7 +1502,7 @@ Functionality to look out for when creating your application is:
 
 **References:**
 
-* [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10\_2021-Server-Side\_Request\_Forgery\_\(SSRF\)/)
+* [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_\(SSRF\)/)
 
 **Examples for best practices:**
 
@@ -1427,7 +1510,7 @@ Functionality to look out for when creating your application is:
 * In the Apache web-server, one can control the request size of different pieces of the request:
   * [LimitRequestBody](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestbody)
   * [LimitRequestFields](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestfields)
-* In order to protect oneself from bad redirects, one can define proper [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) headers and a [ContentSecurityPolicy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). Both are set in header fileds of your Web server or load balancer.
+* In order to protect oneself from bad redirects, one can define proper [[CORS](#cors)] headers and a ContentSecurityPolicy[[CSP](#csp)]. Both are set in header fileds of your Web server or load balancer.
 
 <div class="info">
 **Links to risks**
@@ -1505,74 +1588,6 @@ Main outline from the COSO principles:
 * [GIR24](#risk-gir-24)
 </div>
 
-### Access Control
-
-This is, by far, the most important mitigation. On- and off-boarding should be simple, and every piece of the infrastructure should be secured from unauthenticated and unauthorized access.
-
-Main outline from the COSO principles:
-
-1. Keep an inventory of information assets
-2. Restrict Logical Access — Logical access to information assets, should be restricted through the use of access control software and rule sets.
-3. Use authentication systems.
-4. Network Segmentation — Restrict access to nodes to a minimum set of IPs.
-5. Manages Points of Access — Access to nodes inside the segmented area need to be controlled with authentication and authorization methods.
-6. Proper credentials management for infrastructure software — A clear definition of each credential life-time is established and enforced.
-7. Protects Encryption Keys — Processes are in place to protect encryption keys for their lifetime.
-
-**References:**
-
-* CC 6.1 of Trust services Criteria
-
-**Examples for best practices:**
-
-* Creation and continuous analysis of Software Bill of Materials ([SBOM](https://www.cisa.gov/sbom)).
-* Use of Clients, roles and groups when using [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html).
-* Have an internal virtual private network and only have well-defined endpoints be accessible from the web.
-* Uses of vault systems to manage credentials and encryption keys. Like AWS KMS.
-
-<div class="info">
-**Links to risks:**
-
-* [DOW7](#risk-dow-7)
-* [KEC4](#risk-kec-4)
-* [GIR9](#risk-gir-9)
-* [GIR22](#risk-gir-22)
-</div>
-
-### Implement least privilege
-
-This mitigation goes into the authorization piece of the different users and software pieces. The principle of least access should be considered, as much as possible. Putting measures in place that restrict access to certain groups as an afterthought can become fairly expensive.
-
-Main outline from the COSO principles:
-
-1. Creates or Modifies Access — Processes are in place to create or modify access.
-2. Quick removal of access when needed
-3. Use Role-based access control (RBAC)
-4. Review of roles and permissions on a regular basis.
-
-<div class="info">
-**References:**
-
-* CC 6.3 of the Trust services Criteria
-</div>
-
-**Examples for best practices:**
-
-* Credentials rotation needs to be in place to ensure that there is no interruption in the service when it is done.
-* Off-boarding of a terminated employee should not take more than an hour. Ideally, one would only disable them inside a single-sign-on service such as [Cognito](https://aws.amazon.com/cognito/) or [Keycloak](https://www.keycloak.org).
-* Tools need to be in place to analyze the permissions of certain users/programs and determine if these are too wide.
-* Use of roles on the API endpoint level to determine the correct authorization.
-
-
-
-<div class="info">
-**Links to risks:**
-
-* [KEC11](#risk-kec-11)
-* [GIR1](#risk-gir-1)
-* [KEC8](#risk-kec-8)
-* [GIR25](#risk-gir-25)
-</div>
 
 ### Protection of Data in transit
 
@@ -1631,7 +1646,6 @@ Main outline from the COSO principles:
 
 * Many software pieces have defined configuration standards provided by [CIS benchmarks](https://www.cisecurity.org).
 * Configuration standards can be enforced by automated software (e.g. [CoGuard](https://www.coguard.io))
-* An example for monitoring software is the [ELK stack](https://www.elastic.co/elastic-stack/). A very common centralized dashboard is [Grafana](https://grafana.com).
 
 <div class="info">
 **Links to Risks:**
@@ -1640,33 +1654,7 @@ Main outline from the COSO principles:
 * [KEC8](#risk-kec-8)
 </div>
 
-### Have Monitoring in place
 
-Monitoring is so important, it is literally present in almost all compliance and security frameworks. It is crucial that not only high level business functions are monitored, but also correct functionality of all containers. In particular, proper log collection allows to dynamically verify that e.g. a slashing database ist actually being used, and used by the right signer.
-
-Main outline from the COSO principles:
-
-* Implements Detection Policies, Procedures, and Tools
-* Design and improve on Detection Measures — Ideally capture unauthorized access, suspicios traffic, etc.
-* Implement filters to not even let suspicious requests contact the back-end.
-* Check frequently if detection tools are working correctly.
-* Have one or more centralized dashboards to aggregate the data and present it in a digestible way to a human observer.
-
-**References:**
-
-* CC 7.2 of the SOC 2 trust services criteria.
-
-**Examples for best practices:**
-
-* Example of [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
-* Cognito's [Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html).
-* Filtering and anaysis of anomalies can be done in AWS using the[ WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html).
-
-<div class="info">
-**Links to Risks:**
-
-* [GIR13](#risk-gir-13)
-</div>
 
 ### Analyze security events and learn from them
 
@@ -1859,7 +1847,7 @@ Main outline from the COSO principles:
 
 **Examples for best practices:**
 
-* Use [schema](https://json-schema.org) and [schema evolution techniques](https://en.wikipedia.org/wiki/Schema\_evolution) to keep your data-flow clean.
+* Use [schema](https://json-schema.org) and [schema evolution techniques](https://en.wikipedia.org/wiki/Schema_evolution) to keep your data-flow clean.
 * Always define minimum and maximum input sizes and MIME types ([Microsoft IIS example](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/mimemap)).
 
 <div class="info">
@@ -1893,7 +1881,6 @@ Main outline from the COSO principles:
 
 ## ISO 27001
 
-### Access Control
 
 Main outline of the Information security controls reference:
 
@@ -1925,7 +1912,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 5.16
+* [ISO 27001](#iso-27001) Annex A 5.16
 
 **Examples for best practices:**
 
@@ -1952,7 +1939,7 @@ Main outline of the Information security controls reference:
 
 **Examples for best practices:**
 
-* Use of an [Single Sign on](https://en.wikipedia.org/wiki/Single\_sign-on) is preferred, and from there, all other secrets should be released to authorized users through e.g. [certificates](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Certificate-based\_Authentication) and/or [vault mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates).
+* Use of an [Single Sign on](https://en.wikipedia.org/wiki/Single_sign-on) is preferred, and from there, all other secrets should be released to authorized users through e.g. [certificates](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Certificate-based_Authentication) and/or [vault mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates).
 
 <div class="info">
 **Links to Risks:**
@@ -1969,7 +1956,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 5.18
+* [ISO 27001](#iso-27001) Annex A 5.18
 
 **Examples for best practices:**
 
@@ -2025,8 +2012,8 @@ Main outline of the Information security controls reference:
 
 **Examples for best practices:**
 
-* Disable privilege escalation mechanisms ([like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container\_exec/))
-* [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server\_admin/topics/users/con-user-impersonation.adoc)
+* Disable privilege escalation mechanisms ([like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container_exec/))
+* [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server_admin/topics/users/con-user-impersonation.adoc)
 
 <div class="info">
 **Links to Risks:**
@@ -2090,7 +2077,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.10
+* [ISO 27001](#iso-27001) Annex A 8.10
 
 **Examples for best practices:**
 
@@ -2104,25 +2091,6 @@ Main outline of the Information security controls reference:
 * [DOW17](#risk-dow-17)
 </div>
 
-### Monitoring Activities
-
-Main outline of the Information security controls reference:
-
-* All infrastructure components need to be monitored and proper alerting systems need to be in place.
-
-**References:**
-
-* ISO 27001 Annex A 8.16
-
-**Examples for best practices:**
-
-* See corresponding [SOC 2 control](https://app.gitbook.com/o/4wlsLrcXqEBGDqz0Hphy/s/xTRnDyIanlwU7cCKcAju/\~/changes/41/mitigation-and-controls-library/mitigation-strategies-and-best-practices/mitigation-strategies#to-meet-its-objectives-the-entity-uses-detection-and-monitoring-procedures-to-identify-1-changes-to).
-
-<div class="info">
-**Links to Risks:**
-
-* [GIR4](#risk-gir-4)
-</div>
 
 ### Privileged utility programs
 
@@ -2132,7 +2100,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.18
+* [ISO 27001](#iso-27001) Annex A 8.18
 
 **Examples for best practices:**
 
@@ -2155,7 +2123,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.21
+* [ISO 27001](#iso-27001) Annex A 8.21
 
 **Examples for best practices:**
 
@@ -2177,7 +2145,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.22
+* [ISO 27001](#iso-27001) Annex A 8.22
 
 **Examples for best practices:**
 
@@ -2200,7 +2168,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.25
+* [ISO 27001](#iso-27001) Annex A 8.25
 
 **Examples for best practices:**
 
@@ -2227,7 +2195,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.29
+* [ISO 27001](#iso-27001) Annex A 8.29
 
 **Examples  for best practices:**
 
@@ -2252,7 +2220,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.30
+* [ISO 27001](#iso-27001) Annex A 8.30
 
 **Examples for best practices:**
 
@@ -2273,7 +2241,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.31
+* [ISO 27001](#iso-27001) Annex A 8.31
 
 **Examples for best practices:**
 
@@ -2298,7 +2266,7 @@ Main outline of the Information security controls reference:
 
 **References:**
 
-* ISO 27001 Annex A 8.32
+* [ISO 27001](#iso-27001) Annex A 8.32
 
 **Examples for best practices:**
 
@@ -2312,3 +2280,59 @@ Main outline of the Information security controls reference:
 * [DOW11](#risk-dow-11)
 * [GIR25](#risk-gir-25)
 </div>
+
+## References
+
+#### Specifications
+
+### [CSP]
+
+"Content Security Policy", Mozilla Corporation. https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+
+### [CORS]
+
+"Cross-Origin Resource Sharing (CORS)", Mozilla Corporation. https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+### [ISO 27001]
+
+ISO IEC 27001:2022 "Information security, cybersecurity and privacy protection — Information security management systems — Requirements" 3rd Ed. ISO, 2022. https://www.iso.org/standard/27001
+
+### [SOC2]
+
+"2017 Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy (With Revised Points of Focus — 2022)" AICPA 2022. https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022 (requires AICPA membership)
+
+More:
+
+- [CVE entries.](https://cve.mitre.org)
+- [NIST SP 800-34 Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1_cp_template_high_impact_system.docx)
+- [NIST SP 800-61](https://csrc.nist.gov/pubs/sp/800/61/r2/final)
+- [NIST SP 800-115](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/): [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/), [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF%29/)
+- [RFC 1918](https://www.rfc-editor.org/rfc/rfc1918)
+- [SBOM](https://www.cisa.gov/sbom)
+- [@Shreyashere Blog post: Pre-mortems](https://medium.com/@shreyashere/how-to-use-pre-mortems-to-prevent-problems-blunders-and-disasters-6ecc6df6e22a)
+- , [AICPA - material control criteria](https://us.aicpa.org/content/dam/aicpa/research/standards/auditattest/downloadabledocuments/au-c-00320.pdf)
+
+### Tools:
+
+- Apache web-server [LimitRequestBody](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestbody), [LimitRequestFields](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestfields)
+- [AWS WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html), [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)
+- [CIS benchmarks](https://www.cisecurity.org)
+- [Cognito](https://aws.amazon.com/cognito/), [Cognito's Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html)
+- [CoGuard](https://www.coguard.io)
+- [docker-compose](https://docs.docker.com/compose/) [like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container_exec/))
+- [DoppelBuster](https://github.com/SimplyStaking/DoppelBuster)
+- [ELK stack](https://www.elastic.co/elastic-stack/)
+- [Grafana](https://grafana.com), [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
+- [Hibernate](https://hibernate.org/orm/documentation/getting-started/)
+- [Keycloak](https://www.keycloak.org) [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server_admin/topics/users/con-user-impersonation.adoc)
+- [Kubernetes Cluster Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+- [Liquibase](https://www.liquibase.org)
+- Microsoft IIS [Microsoft IIS (input limits) example](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/mimemap), [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/)
+- [minikube](https://minikube.sigs.k8s.io/docs/)
+- [shred](https://man.archlinux.org/man/shred.1.en)
+- [SQLAlchemy](https://www.sqlalchemy.org)
+- [Trivy](https://github.com/aquasecurity/trivy)
+- [TypeORM](https://typeorm.io)
+- [vault SSH certificate mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates)
+- [Zabbix reference](https://www.zabbix.com/documentation/6.4/en/manual/appendix/items/activepassive?hl=CPU%2Cload)
