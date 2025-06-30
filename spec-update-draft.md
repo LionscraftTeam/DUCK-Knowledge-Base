@@ -1,10 +1,61 @@
 # DUCK
 
+Copyright© 2024-2025, Lido Foundation. This document may be used, modified, copied and distributed under the terms of the [Apache 2 License](./LICENSE).
+
+## Editor's draft post version 1
+
+### Version 1: [https://duck-initiative.gitbook.io/d.u.c.k.-knowledge-base](https://duck-initiative.gitbook.io/d.u.c.k.-knowledge-base)
+
+### Contributors to this version:
+
+This builds on the content developed as version 1, and we gratefully acknowledge everyone who developed that. In addition, specific contributions to this version have been made by:
+
+Oriol, Miguel, Ivan Ang, Sreepriya Kalarikka, Antonio, CK Teo, Julian Ueding, Scott Waller
+
+(The editor apologises for any names that have been missed, and requests that you let us know so we can rectify that).
+
+### Editor: Chaals Nevile
+
+
+
 ## Abstract
 
 This specification defines a series of risks that can apply when operating a blockchain node.
 It provides a series of mitigations that can minimise the likelihood that particular risks will be realised and cause a problem,
 such as compromising the control of a node or actions that result in reduced economic rewards, or penalties such as slashing.
+
+## Table of Contents
+
+- [Abstract](#abstract)
+- [Risks](#risks)
+  - [Slashing Risk](#slashing-risk)
+  - [Downtime Risk](#downtime-risk)
+  - [Validator Key Custody Risk](#validator-key-custody-risk)
+  - [Withdrawal Key Custody Risk](#withdrawal-key-custody-risk)
+  - [General Infrastructure Risk](#general-infrastructure-risk)
+  - [Service Partner Specific Risk](#service-partner-specific-risk)
+  - [Downtime Risks](#downtime-risks)
+  - [Reputational Risk](#reputational-risk)
+- [Risk Management Procedures](#risk-management-procedures)
+  - [Risk Monitoring](#risk-monitoring)
+  - [Incident Response Plan](#incident-response-plan)
+  - [Disaster Recovery Plan](#disaster-recovery-plan)
+  - [Pre-Mortem](#pre-mortem)
+- [Risk Assessment Procedures](#risk-assessment-procedures)
+  - [Financial Loss](#financial-loss)
+  - [Occurrence Probability](#occurrence-probability)
+  - [Risk Matrix](#risk-matrix)
+- [Review and Audit Procedures](#review-and-audit-procedures)
+- [Mitigation Strategies](#mitigation-strategies)
+  - [Node-Operator Technology Stack Mitigations](#node-operator-technology-stack-mitigations)
+  - [Secret Management](#secret-management)
+  - [Access Management](#access-management)
+  - [Development and Update Process](#development-and-update-process)
+  - [Monitoring](#monitoring)
+  - [General Measures](#general-measures)
+- [Controls Catalog](#controls-catalog)
+- [Status and Feedback](#sec-sotd)
+
 
 
 
@@ -14,7 +65,7 @@ The six core risk categories specific to node operations define overarching
 dimensions that Node Operators should consider in their overall setup.
 
 
-### Slashing Risks:
+### Slashing Risk
 
 Performing slashable actions leading to penalties.
 
@@ -137,7 +188,7 @@ Performing slashable actions leading to penalties.
 </tr></tbody></table>
 
 
-### Downtime Risks:
+### Downtime Risk
 
 Connectivity issues leading to reduced rewards.
 
@@ -271,7 +322,7 @@ Connectivity issues leading to reduced rewards.
   <td>System downtime after validator client update caused by incompatibility</td>
 </tr></tbody></table>
 
-## Validator Key Custody Risk
+### Validator Key Custody Risk
 
 Losing access to critical system components.
 
@@ -333,7 +384,7 @@ Losing access to critical system components.
   <td>Someone who gains physical access to a server can have access to locally exposed ports and can access the software API</td>
 </tr></tbody></table>
 
-## Withdrawal Key Custody Risk
+### Withdrawal Key Custody Risk
 
 
 <table>
@@ -365,7 +416,7 @@ Losing access to critical system components.
 </tr></tbody></table>
 
 
-### General Infrastructure (GIR)
+### General Infrastructure Risk
 
 Risks related to process errors and inefficiencies of the general infrastructure.
 
@@ -529,7 +580,7 @@ Risks related to process errors and inefficiencies of the general infrastructure
   <td>If the infrastructure knowledge is not shared across the team, this could lead to a heavy dependency on a single person</td>
 </tr></tbody></table>
 
-# Service Partner Specifics (SPS)
+### Service Partner Specific Risk
 
 Risk related to running specific services.
 
@@ -549,7 +600,7 @@ Risk related to running specific services.
   <td><ul><li>No new stake will be allocated to the Node Operator (happens automatically)</li><li>the daily rewards sent to the Node Operator will be halved (with the remaining half sent towards that day’s rebase) (happens automatically)</li><li>reduced rewards will continue for the duration of a cooldown period long enough to determine whether, immediately after service restoration by the Node Operator, subsequently received validator exit requests are processed in a timely manner.</li></ul></td>
 </tr></tbody></table>
 
-### Reputation (RER)
+### Reputational Risk
 
 
 <table>
@@ -580,15 +631,15 @@ Risk related to running specific services.
   <td>Reputation damage due to mismanagement of Post-slashing, -downtime or access loss to keys</td>
 </tr></tbody></table>
 
-# Risk Management Procedures
+## Risk Management Procedures
 
 Processes and actions that should be defined to address risks and that cover the concrete procedures in case of related incidents. &#x20;
 
-## 1. Risk Monitoring
+### Risk Monitoring
 
 Leverage monitoring dashboards or systems to identify the risk and gain relevant data.
 
-### Beacon Chain Monitoring
+#### Beacon Chain Monitoring
 
 * **Slashing Events:** Monitor the beacon chain for any slashing events.
 * **Anti-Slashing Database:** Regularly poll the local node to ensure the anti-slashing database is enabled and functioning correctly.
@@ -598,14 +649,14 @@ Leverage monitoring dashboards or systems to identify the risk and gain relevant
 * **Non-finalized Events:** Monitor events preventing the consensus layer from confirming finality
 * **Special Software Conditions:** Monitor major software upgrades requiring specific durations and   events that will conclude the upgrade
 
-### Node and System Health
+#### Node and System Health
 
 * **Node Health Metrics:** Monitor key metrics like CPU, memory, restarts, and uptime of nodes.
 * **System Configuration:** Monitor system configuration settings in real-time and continuously.
 * **Key Usages:** Track the usage of critical system keys.
 * **App-specific:** App specific metrics  (e.g. metrics for Dirk & Vouch)
 
-### Security and Compliance
+#### Security and Compliance
 
 * **Access Control and Logs:** Keep an eye on access controls to nodes and abnormal configuration changes.
 * **Phishing and Endpoint Protection:** Monitor for phishing attacks and ensure the security of endpoint protection systems, both for employee devices and infrastructure nodes.
@@ -614,12 +665,12 @@ Leverage monitoring dashboards or systems to identify the risk and gain relevant
 * **Access Patterns and Configurations:** Check for unusual access patterns and the configurations of VPNs and 2FA systems.
 * **Relay Compliance:** Monitor relay compliance aspects and availability metrics.
 
-### Upgrade and Code Management
+#### Upgrade and Code Management
 
 * **Upgrade Process:** Monitor the upgrade process, including client code source, notification channels, bug reports, and community disclosures.
 * **Customized Code in Testnet:** Monitor any new custom code deployed in the testnet.
 
-### Hardware and Network
+#### Hardware and Network
 
 * **Baremetal and Network Equipment Health:** Monitor the health of bare metals and networking equipment, including internet and peering connectivity.
 * **Predictive Models:** Use predictive models for future malfunctions and equipment replacement needs.
@@ -627,7 +678,7 @@ Leverage monitoring dashboards or systems to identify the risk and gain relevant
 * **Peering Connectivity:** Monitor both internal and external network peering connectivity.
 * **Firewall Configuration and Metrics:** Keep an eye on firewall configuration changes or unexpected increases in drop metrics.
 
-### Cloud and Infrastructure
+#### Cloud and Infrastructure
 
 * **Cloud Monitoring Solutions:** Utilize cloud monitoring solutions to keep track of uptime and internal issues.
 * **Cloud Service Notifications:** Stay informed about cloud service announcements regarding expected downtime and maintenance.
@@ -636,7 +687,7 @@ Leverage monitoring dashboards or systems to identify the risk and gain relevant
 Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md "mention") for tool examples to perform the monitoring of some of the metrics mentioned above.
 </div>
 
-## 2. Incident Response Plan
+### Incident Response Plan
 
 Define Incident Response Plans (ICR) for all specific [risks](risks/ "mention") and store them in a central location with access for all relevant employees. ICRs establish plans for managing security incidents and events, and offer guidance for employees or incident responders who believe they have discovered, or are responding to, a security incident. Ensure that relevant employees are aware of the location. Simulations of an Incident Response Plan should be conducted at least once a year.
 
@@ -645,7 +696,7 @@ Incident Response Plan template can be found here:\
 [https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50\_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50\_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
 </div>
 
-## 3. Disaster Recovery Plan
+### Disaster Recovery Plan
 
 A Disaster Recovery Plan gives guidance on recovering one or more information systems at an alternate facility in response to a major hardware or software failure or destruction of facilities. Simulations of a Disaster Recovery Plan should be conducted at least once a year in a test environment.
 
@@ -656,7 +707,7 @@ Disaster Recovery Plan templates can be found here:
 * [#automation](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md#automation "mention")
 </div>
 
-## 4. Pre-Mortem
+### Pre-Mortem
 
 Perform Pre-Mortems for specific risks. The article linked below provides instructions on how to use Pre-Mortems to prevent incidents. Example topics for a Pre-Mortem could be&#x20;
 
@@ -668,15 +719,17 @@ Perform Pre-Mortems for specific risks. The article linked below provides instru
 
 
 
-# Risk Assessment Procedures
+## Risk Assessment Procedures
 
 This Risk Assessment Procedure provides a systematic approach for Ethereum
 node operators to assess the financial loss and the probability for each
 identified scenario.
 
-## **1. Assessment of Financial Loss for Each Identified Scenario**
+### Financial Loss
 
-**Direct Monetary Losses from a Slashing Event**\
+First, it is important to assess the likely financial loss for any given risk scenario.
+
+#### Direct Monetary Losses from a Slashing Event
 Assess the losses directly linked to the slashing event. This can include:
 
 * Direct slashing penalty due to double signing (currently 1 ETH)
@@ -686,7 +739,7 @@ Assess the losses directly linked to the slashing event. This can include:
 * Possible recoveries from insurance payments
 * The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
 
-**Direct Monetary Losses from a Downtime Event**\
+#### Direct Monetary Losses from a Downtime Event
 Assess the losses directly from the downtime event. This can include:
 
 * Downtime penalties until the validator is exited
@@ -694,20 +747,20 @@ Assess the losses directly from the downtime event. This can include:
 * Possible recoveries from insurance payments
 * The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
 
-**Reputational Risks**\
+#### Reputational Risks
 Determine the monetary loss from reputational damage. This includes:
 
 * Reduction in earnings due to the depletion of presently staked assets
 * Loss of anticipated earnings due to the diminishment of future staked assets
 
-**Losses from the Event Investigation**\
+#### Losses from the Event Investigation
 Indirect losses can arise from the investigation of the slashing or downtime event. This can include:
 
 * Costs associated with conducting an internal investigation
 * Expenses for external investigative services
 * Replacement or upgrading of hardware and software
 
-**Legal Disputes and Liabilities**\
+#### Legal Disputes and Liabilities
 Additional costs can come from legal disputes and liabilities. This can include:
 
 * Obligation for slashing or downtime events as stated in Service Level Agreements
@@ -715,9 +768,9 @@ Additional costs can come from legal disputes and liabilities. This can include:
 * Costs associated with legal consultation and advisory services
 * Possible insurance payments (e.g. for legal defence costs)
 
-***
 
-## **2. Assessment of the Occurrence Probability for Each Identified Scenario**
+
+### Occurrence Probability
 
 Assign a likelihood of occurrence and estimate the potential financial impact for each risk identified. This approach considers the specific operational context of the node operator and requires the node operator to tailor the assessment to its unique risk exposure, and vulnerabilities and to take the mitigation strategies into account. This process can be informed by:
 
@@ -727,35 +780,35 @@ Assign a likelihood of occurrence and estimate the potential financial impact fo
 * Utilizing risk assessment tools or software for a more data-driven analysis
 * Analyze the Mean Time to Repair (MTTR, The average time it takes to fully restore a system or service after a failure or security incident) in case of a downtime under different scenarios.
 
-***
 
-## 3. Risk Matrix
+
+### Risk Matrix
 
 Create a risk matrix to visually categorize risks based on their severity and likelihood. This helps in prioritizing which risks need more immediate attention. This process can be performed before and after the identified mitigation and controls are in place to visualize the effect of these strategies.
 
-# Review & Audit Procedures
+## Review and Audit Procedures
 
-## Introduction
+### Introduction
 
 This document provides a guide for Ethereum node operators on the best practices for conducting IT security-related reviews and audits. It aims to ensure the security, efficiency, and compliance of the node operations within the Ethereum network.&#x20;
 
 See as well the NIST Technical guidance to Information Security Testing and Assessment : [https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
 
-## 1. Internal Reviews vs External Audits
+#### Internal Reviews vs External Audits
 
-#### Internal Reviews:
+##### Internal Reviews:
 
 * **Purpose:** To conduct self-assessments of the node's operation and management
 * **Process:** Conducted by the node's operating team using internal checklists and monitoring tools
 * **Benefits:** Quick identification and rectification of operational issues and continuous improvement at a low cost
 
-#### External Audits:
+##### External Audits:
 
 * **Purpose:** To provide an independent assessment of the node's operation and compliance
 * **Process:** Conducted by third-party experts or audit firms specializing in blockchain technology and IT security
 * **Benefits:** Provides credibility, helps in identifying blind spots in internal reviews, and ensures compliance with industry standards
 
-## 2. Types of Audits to be Conducted
+### Types of Audit
 
 #### Infrastructure Audits:
 
@@ -777,7 +830,7 @@ See as well the NIST Technical guidance to Information Security Testing and Asse
 * **Purpose:** To assess the efficiency and stability of the node
 * **Key Areas:** Block propagation time, transaction processing speed, uptime metrics, and resource utilization (such as CPU and memory usage)
 
-## 3. When to Perform Audits
+### When to Perform Audits
 
 #### Regularly-Scheduled Audits:
 
@@ -789,7 +842,7 @@ See as well the NIST Technical guidance to Information Security Testing and Asse
 * **Triggers:** Perform audits in response to specific events such as network upgrades (hard forks), security breaches, updates of the smart contract, compliance events,  performance issues, or major infrastructure updates.
 * **Focus:** These audits should primarily assess the impact of the event on your node's operation and security.
 
-## 4. General Suggestions for Internal Audit
+### General Suggestions for Internal Audit
 
 #### Responsible Person:
 
@@ -812,16 +865,9 @@ See as well the NIST Technical guidance to Information Security Testing and Asse
 * This should include detailed findings, recommendations, and any corrective actions taken.&#x20;
 * Ensure that these reports are accessible to relevant stakeholders for review and follow-up.
 
-# ℹ️ Mitigation & Controls Library
+## Mitigation Strategies
 
-The Mitigations & Controls Library is a curated repository of information, tools, and best practices designed to address and manage risks inherent to node operations. This comprehensive library serves as a go-to resource for node operators, providing actionable insights and mitigation options to enhance the security, reliability, and efficiency of their operations.
-
-Tangible components:
-
-* Mitigation strategies and Best Practices
-* Controls catalog
-* Implementation Guides library for selected controls
-* Ready-to-use tools, scripts, and templates
+The Mitigation Strategiers section serves as a go-to resource for node operators, providing actionable insights and mitigation options to enhance the security, reliability, and efficiency of their operations.
 
 Most of the best practices that optimize up-time, access control and general stability directly apply to operating a node properly. However, there are a few risks that are very specific to running a node-operator, and to mitigate them, higher levels of process segregation need to be achieved.
 
@@ -833,12 +879,9 @@ When analyzing the scope and the respective identified risks, we have found the 
 
 As with every audit, we put together the control criteria which are [material](https://us.aicpa.org/content/dam/aicpa/research/standards/auditattest/downloadabledocuments/au-c-00320.pdf) in the context of protecting node operators from their specific risks.
 
+### Node-Operator Technology Stack Mitigations
 
-# Mitigation Strategies
-
-## Node-Operator Technology Stack Mitigations
-
-### Local anti-slashing database
+#### Local anti-slashing database
 
 To avoid double signing, validators maintain a history of messages they signed, and this is usually stored inside of a database. In some cases, this feature is enabled by an external web3signer. The maintenance and protection of this database is crucial, as inconsistencies in this database may cause a double-signing event. The following items need to be in place:
 
@@ -854,7 +897,7 @@ To avoid double signing, validators maintain a history of messages they signed, 
 * [SLS3](#risk-sls-3)
 </div>
 
-### Doppelgänger protection
+#### Doppelgänger protection
 
 While there are multiple measures possible to be taken to avoid two validator running with the same signing keys, one can also employ technologies that detect and prevent two validators running at the same time. This can be done using monitoring and alert systems, robust StatefulSet handling in Kubernetes to ensure no two containers with the same keys run at the same time, or pre-defined tools such as [DoppelBuster](https://github.com/SimplyStaking/DoppelBuster).
 
@@ -864,7 +907,7 @@ While there are multiple measures possible to be taken to avoid two validator ru
 * [SLS2](#risk-sls-2)
 </div>
 
-### Use of a Web3Signer
+#### Use of a Web3Signer
 
 The main benefit of the use of Web3 signers is to have a service that is focused on the signing task directly, and comes with protection mechanisms.
 
@@ -885,7 +928,7 @@ Similar to the anti-slashing database, whenever used, a web3signer needs to be
 * [KEC6](#risk-kec-6)
 </div>
 
-### Client diversity
+#### Client diversity
 
 Maintain a diverse set of clients for different protocols, in order to reduce blast radius in case one of the clients appears to have a protocol error or other bug. In some cases, migrate keys to different clients in case of a specific client error observed, such as startup issues after controlled update or bug in the latest version of the chosen client.
 
@@ -898,7 +941,7 @@ Maintain a diverse set of clients for different protocols, in order to reduce bl
 * [DOW19](#risk-dow-19)
 </div>
 
-### Distributed Validator Technology (DVT)
+#### Distributed Validator Technology (DVT)
 
 In order to avoid the single-point of failure problem for a node-validator without risking a slashing incident, DVT has been developed.
 
@@ -915,7 +958,7 @@ In order to avoid the single-point of failure problem for a node-validator witho
 * [KEC6](#risk-kec-6)
 </div>
 
-### Lido-specific: Handling of delinquent state&#x20;
+#### Lido-specific: Handling of delinquent state&#x20;
 
 In order to avoid loosing out on opportunity cost, Node operators need to develop and adhere to strict processes to properly exit validators, as they are otherwise put into a delinquent state. This results in monetary losses.
 
@@ -925,9 +968,9 @@ In order to avoid loosing out on opportunity cost, Node operators need to develo
 * SPS1
 </div>
 
-## Secret Management
+### Secret Management
 
-### Controlled/audited secret access
+#### Controlled/audited secret access
 
 Any secret needs to be accessed and authorized through a vault system. In this way, everything is audited, and anomaly detection can be activated for those vaults.
 
@@ -951,7 +994,7 @@ Furthermore, access credentials for internal systems should also be stored insid
 * [GIR25](#risk-gir-25)
 </div>
 
-### Encryption of data at rest/in transit
+#### Encryption of data at rest/in transit
 
 Many different components interplay while a staking operation is going on. It is crucial, since sensitive information may be transmitted, to ensure that data is stored and transmitted in an encrypted fashion.
 
@@ -967,7 +1010,7 @@ Many different components interplay while a staking operation is going on. It is
 * GR10
 </div>
 
-### Store withdrawal keys in a cold location
+#### Store withdrawal keys in a cold location
 
 Ideally, since these keys are not used often, it makes sense to store them in locations where data is not as often accessed. Ideally Air-Gapped.
 
@@ -979,7 +1022,7 @@ Ideally, since these keys are not used often, it makes sense to store them in lo
 * [KEC7](#risk-kec-7)
 </div>
 
-### Employees and signing keys
+#### Employees and signing keys
 
 Employees should not be able to delete signing keys and there should be a back-up for the signing keys. Modern vault systems can have policies where deletion is prevented by certain or all users. Signing keys should be only possible to be removed by the root-user or through some multi-signing mechanism.
 
@@ -989,7 +1032,7 @@ Employees should not be able to delete signing keys and there should be a back-u
 * [KEC10](#risk-kec-10)
 </div>
 
-### Access to unencrypted signing keys
+#### Access to unencrypted signing keys
 
 The use case where an employee would need to access a signing key is low, and this should only be possible with a clear protocol when a support case is required. Vault systems can be set up that only verifier container roles can access these keys.
 
@@ -1000,7 +1043,7 @@ The use case where an employee would need to access a signing key is low, and th
 * [KEC11](#risk-kec-11)
 </div>
 
-### Key rotation
+#### Key rotation
 
 Key rotation and a proper process around it is key to protect one's infrastructure from a potential breach of credentials. When in doubt, keys should be rotated. This includes, but is not limited to:
 
@@ -1017,7 +1060,7 @@ Key rotation and a proper process around it is key to protect one's infrastructu
 * [GIR7](#risk-gir-7)
 </div>
 
-## Access Management
+### Access Management
 
 ### Access controls & access management
 
@@ -1096,9 +1139,9 @@ This is mainly for bare-metal installations. If you host your nodes on-premise, 
 * [KEC8](#risk-kec-8)
 </div>
 
-## Development and Update Process
+### Development and Update Process
 
-### Testing and review of all changes to infrastructure code&#x20;
+#### Testing and review of all changes to infrastructure code&#x20;
 
 Anything on the infrastructure should be captured in a code repository, and changes managed through a versioning system such as Git. No direct push to the main branch should be possible; everything should go through pull requests and review.
 
@@ -1133,7 +1176,7 @@ Ideally, metrics should be used to verify a high degree of testing culture. This
 * [DOW20](#risk-dow-20)
 </div>
 
-### No custom changes to the validator software
+#### No custom changes to the validator software
 
 Validator software is open source, but in order to ensure that no protocol error occurs, the code should not be touched.
 
@@ -1146,7 +1189,7 @@ Validator software is open source, but in order to ensure that no protocol error
 * [DOW20](#risk-dow-20)
 </div>
 
-### Sanitize inputs
+#### Sanitize inputs
 
 Unchecked inputs are a major cause for overflow attacks and brute force. Ideally, the load balancer in front of the node filters out all traffic that has too large headers and payloads. Additionally, if JSON payloads are being used, they should be checked to adhere to a certain schema.
 
@@ -1156,7 +1199,7 @@ Unchecked inputs are a major cause for overflow attacks and brute force. Ideally
 * [GIR8](#risk-gir-8)
 </div>
 
-### Use of separate tests and staging environments
+#### Use of separate tests and staging environments
 
 This minimizes a potential blast radius. It is important to run any change (even an update of a validator software or Web3Signer) through a test environment first, and then roll it out in a staged fashion. If it causes some slashing event, it is then contained to the few nodes that it was rolled out to.
 
@@ -1168,7 +1211,7 @@ This minimizes a potential blast radius. It is important to run any change (even
 * [DOW20](#risk-dow-20)
 </div>
 
-### Use containerized and orchestrated environments only.
+#### Use containerized and orchestrated environments only.
 
 Follow their best practice recommendations. Their mechanisms are more than battle-tested in different environments. Any make-shift approach to do mechanisms such as fail-over by hand should be deemed insecure.
 
@@ -1178,7 +1221,7 @@ Follow their best practice recommendations. Their mechanisms are more than battl
 * [GIR23](#risk-gir-23)
 </div>
 
-### Automation where possible
+#### Automation where possible
 
 Human error is a real threat, and every process should at least follow an automated script that may or not be invoked by a human. The other risk of non-manual steps is the reduction of the risk of exposure of secrets. Everything should be done through pipelines and job-mechanisms (GitHub Actions, Apache Airflow, Apache Nifi)
 
@@ -1196,7 +1239,7 @@ Human error is a real threat, and every process should at least follow an automa
 * [GIR25](#risk-gir-25)
 </div>
 
-### Minimize CVEs in images
+#### Minimize CVEs in images
 
 Analyzing images for potential CVEs is simple nowadays (use e.g. [Trivy](https://github.com/aquasecurity/trivy)). Further configurations inside these images can be checked using [CoGuard](https://www.coguard.io). Any image used in your infrastructure should be checked this way.
 
@@ -1206,9 +1249,9 @@ Analyzing images for potential CVEs is simple nowadays (use e.g. [Trivy](https:/
 * [GIR17](#risk-gir-17)
 </div>
 
-## Monitoring
+### Monitoring
 
-### Logging/Alerting at all levels of the infrastructure
+#### Logging/Alerting at all levels of the infrastructure
 
 Every component of your node operation is producing logs. These should be captured, analyzed, and alert systems should be set up to warn if something is wrong. Examples include, but are not limited to:
 
@@ -1229,7 +1272,7 @@ The alert systems should be automatically set up to take actions such as shuttin
 * [DOW15](#risk-dow-15)
 </div>
 
-## General Measures
+### General Measures
 
 * General cyber security (Firewall, Intrusion Detection System, ....)
 * Check the uptime promise of cloud provider (minimum three 9s)
@@ -1251,7 +1294,7 @@ The alert systems should be automatically set up to take actions such as shuttin
 * Having a incident response policy / strategy
 
 
-# Controls Catalog & Best Practices
+## Controls Catalog
 
 This section contains controls by framework that were identified to be material to Node Operator risks
 
@@ -2312,3 +2355,21 @@ Main outline of the Information security controls reference:
 * [DOW11](#risk-dow-11)
 * [GIR25](#risk-gir-25)
 </div>
+
+
+
+
+
+
+
+
+
+<section id="sec-sotd">
+
+## Status and Feedback
+
+This document is an Editor's draft, for a proposed revision to the [DUCK Knowledge Base (version 1)](https://duck-initiative.gitbook.io/d.u.c.k.-knowledge-base).
+
+Feedback is welcome, and is preferred as Issues, Pull requests and comments in this Github Repository. Please note the [Conditions of Contributing](./CONTRIBUTING.md).
+
+</section>
