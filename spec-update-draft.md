@@ -1091,6 +1091,7 @@ This is mainly for bare-metal installations. If you host your nodes on-premise, 
 <div class="info">
 **Links to risks:**
 
+* [DOW2](#risk-dow-2)
 * [DOW4](#risk-dow-4)
 * [KEC6](#risk-kec-6)
 * [KEC8](#risk-kec-8)
@@ -2312,3 +2313,277 @@ Main outline of the Information security controls reference:
 * [DOW11](#risk-dow-11)
 * [GIR25](#risk-gir-25)
 </div>
+
+## Communications Strategy
+
+## Stakeholder Overview
+
+### 🙂 Known Stakeholders
+
+This type of stakeholders discloses the identity and provides contact details and channels for communication. Direct and close communication can be required.
+
+#### **Institutional Stakers**
+
+* High stake investors with potential of contractual obligations
+* Generally require close contact and channels for direct contact
+
+#### **Service Partners**
+
+* Partners (e.g. Lido) operating and managing protocols and their respective Node Operator landscape and requiring governance votes
+* Generally require close contact and channels for direct contact
+* Emergency communication in case of incident
+
+#### **Infrastructure Partners**
+
+* Partners involved in hosting, managing or operating infrastructure as part of the node operation setup
+* Need direct contact in case of emergency measure
+
+#### **Media**
+
+* Media channels, platforms, and accounts covering technical and non-technical news and reports
+* Need for monitoring of business relevant news
+* Need for close monitoring and engagement in case of incidents with business impact and public awareness
+
+#### **Core & Client Dev Teams**
+
+* Teams developing and maintaining critical node operations software
+* Need for communication channel in case updates, maintenance and information around critical software components, especially in the event of software issues
+
+#### Other Node Operators
+
+* Node Operators running validators and similar tech stack
+* Need for close monitoring of communication channels and alerting in case of published incidents with potential relevance for own setup
+
+#### **Optional: Service Customers**
+
+* Individuals or organizations using additional service provided by Node Operators (e.g., API users, customers for white-label solutions etc.)
+* Need for direct customer service contact
+* Need for information & updates in case of incidents
+
+### 🫥 Mixed Stakeholders
+
+This type of stakeholders cover entities that do not necessarily disclose their identity information nor provide channels of contact to Node Operators. They might follow available public channels such as X(Twitter), Discord, or public Telegram groups but can also exists entirely independent.
+
+#### **Individual Stakers**
+
+* Low stake investors
+* Need for communication of status and incident updates across all public channels
+
+#### **Communities**
+
+* Individuals or organizations with diverse motivations (e.g., lobbyism, issues, questions, feedback, etc.)
+* Need for public and anonymous communication platform
+
+### Ecosystem Touchpoints
+
+Below you can find common channels and means of contacts used by Node Operators to enable tailored communications across the diverse types of stakeholders.
+
+{% hint style="info" %}
+Stakeholders highly individual and therefore preferences for communication channels can differ. These individual channel preferences need to be identified in advance.
+{% endhint %}
+
+##### 🖥️ **Website**
+
+* Service offering
+* Contact details
+* Target Group: [#known-stakeholders](stakeholder-overview.md#known-stakeholders "mention"), [#mixed-stakeholders](stakeholder-overview.md#mixed-stakeholders "mention")
+
+##### **@ Email**
+
+* Available for any means of contact
+* Target Group:  [#known-stakeholders](stakeholder-overview.md#known-stakeholders "mention"), [#mixed-stakeholders](stakeholder-overview.md#mixed-stakeholders "mention")
+
+##### **🔔 Telegram (Public)**
+
+* Focus on community engagement, incident updates, and information sharing
+* Public accessibility to provide contact channels for anonymous stakeholders
+* Target Group: [#known-stakeholders](stakeholder-overview.md#known-stakeholders "mention"), [#mixed-stakeholders](stakeholder-overview.md#mixed-stakeholders "mention")
+
+##### **🔔 Telegram (Private)**
+
+* Direct communication with relevant stakeholders
+* Target Group: [#known-stakeholders](stakeholder-overview.md#known-stakeholders "mention")
+
+##### **💬 Discord/Slack**
+
+* Direct communication channels with relevant stakeholders
+* Focus on dialogue, community management, status updates, detailed updates in case of incidents and mitigations
+* Target Group:  [#known-stakeholders](stakeholder-overview.md#known-stakeholders "mention"), [#mixed-stakeholders](stakeholder-overview.md#mixed-stakeholders "mention")
+
+##### **🗯️ X (Twitter)**
+
+* Focus on marketing, high-level publication of updates, information in case of incidents, and mitigations
+* Target Group:  [#known-stakeholders](stakeholder-overview.md#known-stakeholders "mention"), [#mixed-stakeholders](stakeholder-overview.md#mixed-stakeholders "mention")
+
+### Stakeholder Management
+
+#### General Procedures
+
+The following procedures shall ensure appropriate consideration and management of relevant stakeholders:
+
+1. Define all stakeholders that are relevant to your organization \
+   (Reference: [stakeholder-overview.md](stakeholder-overview.md "mention"))
+2. Define and align communciation channels that you intend to use for engagement with your stakeholders \
+   (Reference: [ecosystem-touchpoints.md](ecosystem-touchpoints.md "mention"))
+3. Perform a stakeholder mapping and define your individual ways of engagement with the different stakeholder groups (Reference: [#stakeholder-map](stakeholder-management.md#stakeholder-map "mention"))
+4. Document all defined stakeholders with the respective management measures in the stakeholder register (Reference: [#stakeholder-register](stakeholder-management.md#stakeholder-register "mention")). Also take best practices covering incident communication into account (Reference: [incident-communication-protocols.md](../incident-communication-protocols.md "mention")).
+5. Define appropriate intervals to review accuracy and relevance of documented contents in the stakeholder register
+
+#### Stakeholder Map
+
+The **Stakeholder Map** provides guidance when categorizing the individual stakeholders into different communication groups. It can be used as an initial assessment for further review and adaption to your individual stakeholder landscape.
+
+{% hint style="info" %}
+Only use the Communication Map below as a reference! Review each your stakeholder individually and assess needed means of contact! You can find the template here: [stakeholder-map.md](../templates-and-toolkits/stakeholder-map.md "mention")
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/Stakeholder_Map (6).png" alt=""><figcaption><p>Stakeholder Map</p></figcaption></figure>
+
+##### **Manage Closely**
+
+* Establish direct communication channels (e.g., Telegram, Slack or similar)
+* Individual status reporting and communications
+* Perform immediate alignment in case of incidents
+
+##### **Keep Satisfied**
+
+* Establish public communication channels (e.g., Telegram, Discord, X)
+* Regular status reporting and engagement
+* Provide summary and updates in case of incidents
+
+##### **Keep Informed**
+
+* Establish direct or public communication channels depending on need for responsiveness (e.g., Mail, Discord, Telegram, Slack, X)
+* Provide summary and updates in case of incidents
+
+##### **Monitor**
+
+* Monitor activities and react to activities and requests
+
+#### Stakeholder Register
+
+The **Stakeholder Register** is a key management document, listing all stakeholders with details about their roles, interests, and impact on the organization. It is essential for understanding and managing stakeholders, ensuring tailored and effective communication.
+
+{% hint style="info" %}
+You can download the spreadsheet here: [https://docs.google.com/spreadsheets/d/1ovBZbYhR5c-l83F4KKgNKam8igAKPASS/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/spreadsheets/d/1ovBZbYhR5c-l83F4KKgNKam8igAKPASS/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
+{% endhint %}
+
+{% embed url="https://docs.google.com/spreadsheets/d/1ovBZbYhR5c-l83F4KKgNKam8igAKPASS/edit?ouid=117284374075970906179&rtpof=true&sd=true&usp=sharing" %}
+Stakeholder Register
+{% endembed %}
+
+### Incident Communication Protocols
+
+Incidents can lead to a massive impact on Node Operators and their stakeholders. They can result in far more than only direct financial losses but also in irreversible reputational and collateral damages. In order to minimize incident impacts and ensure effective analysis and communications, the standardized communication protocols in this section give a reference for relevant procedures.&#x20;
+
+The **Incident Communication Protocols** equip Node Operators with guidelines around predefined procedures that cover both internal and external procedures.&#x20;
+
+#### Internal Procedures
+
+##### 📋 Pre-Incident
+
+1. Define relevant internal teams and stakeholders for specific incidents in the respective Incident Response Plan (see [risk-management-procedures.md](../risk-framework/risk-management-procedures.md "mention"))
+2. Define dedicated channels of communication in the case of an incident
+
+##### 🚨 During Incident
+
+1. Create an incident async communication channel (Slack, Telegram, or similar).
+2. Initiate defined procedures in respective Incident Response Plan.
+3. Investigate the specific incident if the root cause is not clear:
+
+* Escalate to relevant team (based on the specific risk).
+* Collect generic data about the incident from the detection/monitoring system or the infrastructure.
+* Have “Involved teams” in Incident Response Plan depending on the triaged risk and invite the relevant stakeholders in the order defined.
+
+4. Collect data and create documentation for:
+
+* Executive summary and communication procedures
+* Technical details and sync of team members as the incident progresses
+* Optional: Incident response platform can be used to do that in a more efficient manner&#x20;
+
+5. Create a communication matrix what should or should not be communicated and the communication of information to departments inside the organization.
+
+##### 🔎 Post-Incident
+
+1. Create internal post-incident summaries.
+2. Create summaries for executives and communications with next steps.
+3. Apply new monitoring and detection to limit future risk exposures.
+4. Perform extensive post-mortem analysis (see [post-mortem-analysis.md](templates-and-toolkits/post-mortem-analysis.md "mention")).
+
+#### External Procedures
+
+##### 📋 Pre-Incident
+
+* Define relevant external stakeholders for specific incidents in the respective Incident Response Plan
+* Define dedicated channels of communication in the case of an incident
+
+##### 🚨 During Incident
+
+1. Involve relevant teams of legal, privacy, policy, and communication departments (if applicable).
+2. Update executive and internal teams before any external communication.
+3. Ensure to communicate only when things are certain and clear 100%.
+4. Handle the sharing of information based on the respective incident response plan.
+
+{% hint style="info" %}
+**NOTE:** Communicating as an incident is ongoing can result in further damage, only communicating about the root cause when it is identified and potentially resolved on a case-by-case basis.
+{% endhint %}
+
+##### 🔎 Post-Incident
+
+1. Decide on information and level of detail of the post-mortem analysis (see [post-mortem-analysis.md](templates-and-toolkits/post-mortem-analysis.md "mention")) to be shared with the different stakeholders ([stakeholder-management.md](stakeholder-strategy/stakeholder-management.md "mention")) across the communication channels.
+
+## References
+
+#### Specifications
+
+### [CSP]
+
+"Content Security Policy", Mozilla Corporation. https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+
+### [CORS]
+
+"Cross-Origin Resource Sharing (CORS)", Mozilla Corporation. https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+### [ISO 27001]
+
+ISO IEC 27001:2022 "Information security, cybersecurity and privacy protection — Information security management systems — Requirements" 3rd Ed. ISO, 2022. https://www.iso.org/standard/27001
+
+### [SOC2]
+
+"2017 Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy (With Revised Points of Focus — 2022)" AICPA 2022. https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022 (requires AICPA membership)
+
+More:
+
+- [CVE entries.](https://cve.mitre.org)
+- [NIST SP 800-34 Template](https://csrc.nist.gov/files/pubs/sp/800/34/r1/upd1/final/docs/sp800-34-rev1_cp_template_high_impact_system.docx)
+- [NIST SP 800-61](https://csrc.nist.gov/pubs/sp/800/61/r2/final)
+- [NIST SP 800-115](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/): [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/), [OWASP A10:2021: Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_(SSRF%29/)
+- [RFC 1918](https://www.rfc-editor.org/rfc/rfc1918)
+- [SBOM](https://www.cisa.gov/sbom)
+- [@Shreyashere Blog post: Pre-mortems](https://medium.com/@shreyashere/how-to-use-pre-mortems-to-prevent-problems-blunders-and-disasters-6ecc6df6e22a)
+- , [AICPA - material control criteria](https://us.aicpa.org/content/dam/aicpa/research/standards/auditattest/downloadabledocuments/au-c-00320.pdf)
+
+### Tools:
+
+- Apache web-server [LimitRequestBody](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestbody), [LimitRequestFields](https://httpd.apache.org/docs/2.0/mod/core.html#limitrequestfields)
+- [AWS WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html), [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)
+- [CIS benchmarks](https://www.cisecurity.org)
+- [Cognito](https://aws.amazon.com/cognito/), [Cognito's Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html)
+- [CoGuard](https://www.coguard.io)
+- [docker-compose](https://docs.docker.com/compose/) [like executing as root user inside a Docker container](https://docs.docker.com/engine/reference/commandline/container_exec/))
+- [DoppelBuster](https://github.com/SimplyStaking/DoppelBuster)
+- [ELK stack](https://www.elastic.co/elastic-stack/)
+- [Grafana](https://grafana.com), [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
+- [Hibernate](https://hibernate.org/orm/documentation/getting-started/)
+- [Keycloak](https://www.keycloak.org) [Impersonation mechanisms need to be audited (if it is enabled).](https://github.com/keycloak/keycloak/blob/main/docs/documentation/server_admin/topics/users/con-user-impersonation.adoc)
+- [Kubernetes Cluster Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+- [Liquibase](https://www.liquibase.org)
+- Microsoft IIS [Microsoft IIS (input limits) example](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/mimemap), [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/)
+- [minikube](https://minikube.sigs.k8s.io/docs/)
+- [shred](https://man.archlinux.org/man/shred.1.en)
+- [SQLAlchemy](https://www.sqlalchemy.org)
+- [Trivy](https://github.com/aquasecurity/trivy)
+- [TypeORM](https://typeorm.io)
+- [vault SSH certificate mechanisms](https://developer.hashicorp.com/vault/docs/secrets/ssh/signed-ssh-certificates)
+- [Zabbix reference](https://www.zabbix.com/documentation/6.4/en/manual/appendix/items/activepassive?hl=CPU%2Cload)
