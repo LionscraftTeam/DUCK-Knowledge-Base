@@ -4,13 +4,13 @@
 
 ## What is D.U.C.K.?
 
-The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Risk Framework](risk-framework/risk-framework.md), [Mitigation & Controls Library](mitigation-and-controls-library/mitigation-and-controls-library), and the [Communications Toolkit](communications-toolkit/communications-toolkit), Node Operators have access to assets that they can customize based on their own unique setup and operations.
+The initiative DUCK, "**D**istributed **U**tilization of **C**onfigurations and **K**nowledge", has the goal to equip  node operators with open-source resources enhancing operations and mitigating risks in running staking infrastructure. Through the [Risk Framework](risk-framework/risk-framework.md), [Mitigation & Controls Library](mitigation-and-controls-library/mitigation-and-controls-library.md), and the [Communications Toolkit](communications-toolkit/communications-toolkit.md), Node Operators have access to assets that they can customize based on their own unique setup and operations.
 
 ## Why is D.U.C.K relevant?
 
 Ethereum’s staking ecosystem is powered by the ever-expanding set of node operators. Each operator, with its unique operational methodology, contributes to the protocol’s strength and resilience. This diversity of processes, tools, systems, and geographies within the group of operators should be further nurtured and promoted.
 
-With expected growth in the operator set, each with different team structures and sizes, global footprints, and operational complexities, collaborative and cooperative mechanisms should be devised. They should enable operators to effectively grasp crucial insights on risk management and mitigation, control measures, and operational best practices.
+With expected growth in the operator set, each with different team structures and sizes, global footprints, and operational complexities, collaborative and cooperative mechanisms should be devised. They should enable operators to effectively grasp crucial insights on [risk management](risk-framework/risk-framework.md) and [mitigation](mitigation-and-controls-library/mitigation-strategies.md), [control measures, and operational best practices](controls-catalog-and-best-practices/controls-catalog-and-best-practices.md).
 
 ## What is the objective of D.U.C.K.?
 
