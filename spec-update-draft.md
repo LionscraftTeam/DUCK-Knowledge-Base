@@ -1,6 +1,6 @@
-# DUCK
+# ValOS
 
-Copyright© 2024-2025, Lido Foundation. This document may be used, modified, copied and distributed under the terms of the [Apache 2 License](./LICENSE).
+Copyright© 2025, Lido Foundation. This document may be used, modified, copied and distributed under the terms of the [Apache 2 License](./LICENSE).
 
 ## Editor's draft post version 1
 
@@ -8,11 +8,11 @@ Copyright© 2024-2025, Lido Foundation. This document may be used, modified, cop
 
 ### Contributors to this version:
 
-This builds on the content developed as version 1, and we gratefully acknowledge everyone who developed that. In addition, specific contributions to this version have been made by:
+This specification builds on the content developed as the DUCK Knowledge Base, and we gratefully acknowledge the contributions from everyone who developed that. In addition, specific contributions to this version have been made by:
 
-Oriol, Miguel, Ivan Ang, Sreepriya Kalarikka, Antonio, CK Teo, Julian Ueding, Scott Waller
+Oriol, Miguel, Ivan Ang, Sreepriya Kalarikka, Antonio, CK Teo, Julian Ueding, Scott Waller, @dracaryspierce, Sven, ...
 
-(The editor apologises for any names that have been missed, and requests that you let us know so we can rectify that).
+(This list is a work in progress. The editor apologises for any names that have been missed, and requests that you let us know so we can rectify that).
 
 ### Editor: Chaals Nevile
 
@@ -26,6 +26,8 @@ such as compromising the control of a node or actions that result in reduced eco
 
 ## Table of Contents
 
+- [Abstract](#abstract)
+- [Introduction](#introduction)
 - [Abstract](#abstract)
 - [Risks](#risks)
   - [Slashing Risk](#slashing-risk)
@@ -57,7 +59,20 @@ such as compromising the control of a node or actions that result in reduced eco
 - [Status and Feedback](#sec-sotd)
 
 
+## Introduction
 
+### Purpose
+
+This specification builds on the DUCK knowledge base as an evolution. In addition to the risk framework, updated based on feedback from practitioners,
+and an explanation of mitigation strategies that has likewise been updated, it provides a single set of controls - statements of requirement that can be tested,
+to ensure that as far as possible a Node Operator is following the recognised best practices to minimise risk and effectively maximise their returns.
+
+While there are other standards such as AICPA's SOC 2® [SOC2](#soc2) or ISO's 27001 standard [ISO27001](#iso27001) that can be applied to Node Operators,
+they often include more general requirements than this specification, reflecting a broader scope.
+
+The relevant controls from several such standards are explicitly linked to the controls in this specification. The purpose of this is twofold:
+to simplify the process of certifying conformance to this specification for Operators who have already undergone testing against those standards,
+and to simplify the process of assessing against those standards Node Operators who have been certified as conforming to this specification.
 
 ## Risks
 
@@ -2371,5 +2386,41 @@ Main outline of the Information security controls reference:
 This document is an Editor's draft, for a proposed revision to the [DUCK Knowledge Base (version 1)](https://duck-initiative.gitbook.io/d.u.c.k.-knowledge-base).
 
 Feedback is welcome, and is preferred as Issues, Pull requests and comments in this Github Repository. Please note the [Conditions of Contributing](./CONTRIBUTING.md).
+
+### History and Future
+
+The original content of this specification was developed as the D.U.C.K Knowledge Base, and the current work is a direct evolution of that content.
+
+In updating it, there are several changes being made. The key change is to move from a general explanation of risks and good practices
+to a specification that is well-suited to assessment of conformance.
+
+Several somewhat cosmetic-seeming changes have been made. Most obviously, the name has been changed to ValOS - the Validator Operator Standard -
+and instead of a multi-page website it is available primarily as a single-page specification, in particular enabling easier use offline.
+
+The update process aims to meet some general goals:
+
+- Simplify redundancy
+- Use linking more effectively
+- Respond to feedback from real-world use, to improve the utility of the specification
+- Increase the transparency of and community participation in the maintenance of the specification
+
+### Versions and Version Numbers
+
+The approach to versions for this specification is to maintain a publicly visible "latest Editor's draft",
+representing the current state of what has been proposed and agreed as updates for a new version, and release versions, numbered 1, 2, 3 etc.
+
+The "Editor's Draft" version may change frequently, for example weekly.
+It is primarily to serve the needs of the community involved or interested in the process of updating the specification.
+Part of that community is practitioners such as Node Operators themselves, developers and service providers, and assessors,
+who want to understand changes that they will need to make to their workflows in the short- to medium-term future.
+
+We seek to provide transparency into proposed changes,
+and the process by which they are agreed or rejected, as well as the history of changes that have been made.
+
+The release versions are intended to provide stable reference points, primarily for clarity in understanding the meaning of a specific assessment against a specific version.
+
+The timing of new release versions seeks to balance keeping up with current best practice, and providing a stable target for learning and implementing.
+It is likely that a release cycle will be on the order of 6 to 18 months. The motivation for a new release can be the time elapsed since the last version,
+a major change to best practices or risks, or a combination of these factors, among others.
 
 </section>
