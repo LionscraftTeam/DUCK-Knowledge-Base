@@ -1,5 +1,14 @@
 Your feedback is important to help us improve the DUCK knowledge base. We are grateful for and would like to acknowledge contributions, but there are some important points to consider when providing them.
 
+##  Terms and Conditions
+
+BY CONTRIBUTING TO THIS REPOSITORY, YOU AGREE
+
+1. THAT THE CONTRIBUTIONS ARE YOUR OWN WORK OR WORK YOU HAVE PERMISSION TO SHARE UNDER THESE TERMS OF CONTRIBUTION
+2. TO PROVIDE YOUR CONTRIBUTIONS UNDER THE TERMS OF THE [APACHE 2.0 LICENSE](LICENSE.md)
+3. TO OFFER TO LIONSTCRAFT PTE, IN EXCHANGE FOR THE MAINTENANCE OF THIS WORK, A NON-EXCLUSIVE WORLDWIDE IRREVOCABLE LICENSE TO PERFORM, COPY, MODIFY AND DISTRIBUTE YOUR CONTRIBUTIONS.
+
+
 ## What
 
 ### What feedback is useful?
@@ -43,8 +52,8 @@ This discussion can lead to changes, or even not adopting the proposed solution,
 
 You can also make a Pull Request. If you do:
 
-- **By making the contribution you accept the conditions of the [License](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/blob/main/LICENSE)**.
-- Please make it against the `v2-branch`, which is the working branch for the next replacement version.
+- **By making the contribution you accept the [conditions of contributuing](#terms-and-conditions).
+- Please make your Pull Request against the `v2-branch`, which is the working branch for the next replacement version.
   If it is a typo or other fix that should also be taken into the main branch, we will cherry-pick it.
 - Please provide the name you wish to be acknowledged by, if you are not already an acknowledged contributor.
 - In general, smaller Pull Requests that each address one issue are preferable to a single large Pull Request that touches multiple parts of the document.
