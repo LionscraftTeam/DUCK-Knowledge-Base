@@ -33,6 +33,6 @@ You can provide any feedback or comments by raising or commenting on issues or p
 [this github repository](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/), or through [a google form](https://forms.gle/RaUWtoKdNWivJb5R8).
 Please read the [contributor guidelines](CONTRIBUTING.md) to understand the expectations and (lightweight) conditions before making your first contribution.
 
-You can also join our [Telegram group]().
+You can also join our [Telegram group](https://t.me/+ys5MxWs16T1jOWVi).
 As well as being a place to provide feedback, we highlight issues currently under discussion there,
 to help participants understand what we are working on at any given time.
