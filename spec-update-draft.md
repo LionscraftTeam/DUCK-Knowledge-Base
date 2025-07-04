@@ -635,6 +635,7 @@ Assess the losses directly linked to the slashing event. This can include:
 
 
 
+
 **Direct Monetary Losses from a Downtime Event**\
 Assess the losses directly from the downtime event. This can include:
 
@@ -965,12 +966,19 @@ Key rotation and a proper process around it is key to protect one's infrastructu
 </div>
 
 ## Access Management
-
+@@
 ### Access controls & access management
 
-The principle to follow is "least privilege". This is usually achieved by using an enforcing role-based access control, and create fine-grained roles throughout all processes of an organization.
+Access Control covers at least 3 types of access
 
-Each user should be assigned roles, and some are temporary. There should be a clear lifetime of a user, that is automatically enforced and can be extended when needed.
+- Physical access to devices and facilities
+- The ability to connect to software through networks
+- Requiring defined authorization to perform any specific task, including getting answers to requests
+
+A core principle to follow in granting authorization is [least privilege](#least-privilege). This is usually achieved by using [role-based access control](#rbac), to grant users specific sets of access permissions as required, that are revoked or explicitly and deliberately renewed as often as possible. These enable specific tasks or responsibilities, with fine-grained roles defined throughout all processes of an organization.
+
+Each user should be assigned roles, and some are temporary. There should be a clear lifetime of a role, that is automatically enforced and can be extended when needed.  On- and off-boarding should be simple, and every piece of the infrastructure should be secured from unauthenticated and unauthorized access.
+
 
 <div class="info">
 **Links to risks:**
@@ -983,7 +991,96 @@ Each user should be assigned roles, and some are temporary. There should be a cl
 * [GIR22](#risk-gir-22)
 </div>
 
-### Least Privilege
+
+When it comes to access control, there are three pillars that need to be considered:
+
+* Authentication: Ensure that no service accepts requests without some form of authentication.
+* Authorization: Clearly define who can read/write/update/delete resources. Ideally, this is not done on a per-user basis, but on a per-role basis.
+* Audit: Ensure that all access is logged so that you can alert on anomalies. Especially login failures should be logged.
+
+COSO Principles:
+1. Keep an inventory of information assets
+2. Restrict Logical Access — Logical access to information assets, should be restricted through the use of access control software and rule sets.
+3. Use sufficiently strong authentication systems.
+4. Network Segmentation — Restrict access to nodes to a minimum set of IPs.
+5. Manage Points of Access — Access to nodes inside the segmented area need to be controlled with authentication and authorization methods.
+6. Proper credentials management for infrastructure software — A clear definition of each credential life-time is established and enforced.
+
+COSO principle
+//Does this belong in secret maangement?
+7. Protects Encryption Keys — Processes are in place to protect encryption keys for their lifetime.
+
+This is covered by [secret management](#secret-management)
+
+Special considerations:
+
+* Disable meta-data serving through public endpoints (like what server is running in what version).
+* Limit the outbound traffic of a node that runs a certain service.
+* Apply rate limits to ensure that internal services cannot unintentionally DDos each other.
+* Where possible apply the use of authentication tokens that have a limited lifetime.
+
+
+
+**Examples for best practices:**
+
+* Creation and continuous analysis of Software Bill of Materials ([SBOM](https://www.cisa.gov/sbom)).
+* Use of Clients, roles and groups when using [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html).
+* Have an internal virtual private network and only have well-defined endpoints be accessible from the web.
+* Uses of vault systems to manage credentials and encryption keys. Like AWS KMS.
+
+<div class="info">
+**Links to risks:**
+
+* [DOW7](#risk-dow-7)
+* [KEC4](#risk-kec-4)
+* [GIR9](#risk-gir-9)
+* [GIR22](#risk-gir-22)
+</div>
+
+### Implement least privilege
+
+The core of <dfn>Least Privilege</dfn> is that access is only granted to those who need it, and only for as long as it is relevant. This means that an individual user's privileges are likely to change over time - and in particular, most or all of them are rapidly revoked during any offboarding process.
+
+Almost all Least Privilege implementation is managed through role-based access control, where a set of roles are defined that are disctinguished by the different tasks they need to perform. Access rights are then based on holding a particular role, with individual users assigned relevant roles that are revoked or deliberately renewed to maintain the
+
+//the following is mostly relevant to RBAC not LP
+Main outline from the COSO principles:
+
+1. Creates or Modifies Access — Processes are in place to create or modify access.
+2. Quick removal of access when needed
+3. Use Role-based access control (RBAC)
+4. Review of roles and permissions on a regular basis.
+
+**Examples for best practices:**
+
+* Credentials rotation needs to be in place to ensure that there is no interruption in the service when it is done.
+* Off-boarding of a terminated employee should not take more than an hour. Ideally, one would only disable them inside a single-sign-on service such as [Cognito](https://aws.amazon.com/cognito/) or [Keycloak](https://www.keycloak.org).
+* Tools need to be in place to analyze the permissions of certain users/programs and determine if these are too wide.
+* Use of roles on the API endpoint level to determine the correct authorization.
+
+<div class="info">
+**Links to risks:**
+
+* [KEC11](#risk-kec-11)
+* [GIR1](#risk-gir-1)
+* [KEC8](#risk-kec-8)
+* [GIR25](#risk-gir-25)
+</div>
+
+
+#### Examples for best practices:
+
+* [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/) Observe how different authentication methods are possible to be set there. `anonymousAuthentication` would allow anyone to access as `anonymous`, which is rarely the intention except for the starting page. `basicAuthentication` is better than nothing, but makes user management not scalable. `clientCertificateMappingAuthentication` and `digestAuthentication` are the better ways to also implement RBAC.
+
+<div class="info">
+**Links to risks:**
+
+* [GIR1](#risk-gir-1)
+* [GIR5](#risk-gir-5)
+* [GIR7](#risk-gir-7)
+* [GIR9](#risk-gir-9)
+</div>
+
 
 Even when employing RBAC, there are ways to log into containers as users and acquire larger privileges from there. Take `docker exec -uroot` as an example. These mechanisms can be disabled on the orchestration level (and should be).
 
@@ -1001,7 +1098,7 @@ Even when employing RBAC, there are ways to log into containers as users and acq
 
 ### Strict employment termination process in place
 
-Ensure that terminated employees do not have lingering credentials they can use to cause harm.
+Ensure that employees whose roles have changed do not have lingering credentials they can use or others can misuse to cause harm.
 
 <div class="info">
 **Links to risks:**
@@ -1011,9 +1108,13 @@ Ensure that terminated employees do not have lingering credentials they can use 
 * [GIR25](#risk-gir-25)
 </div>
 
-### No access from external network to the nodes
+### Network access to nodes
 
-Following the principle of defense in depth and least privilege, it is important that nodes are generally not accessible from the web. Any web access should be proxied through a load-balancer that has a firewall attached to it. The reason is that there are many software pieces on a node, potentially, and the attack vector due to a potential CVE may be incresed.
+Following the principle of defense in depth and least privilege, it is important that nodes are not directly accessible without permission, and that they do not leak information to the Web that can help malicious parties gain unauthorized access.
+
+Any web access should be proxied through a load-balancer that has a firewall, and the need for remote access has to be clearly justified.
+
+As well as controlling physical access where possible, it is best practice to ensure that nodes are only responsive through restricted access networks. Further, it is important to ensure the hardware running nodes does not have extraneous software (that can increase the risk of monitoring), does not allow generic probing mechanisms such as open port scans that can help malicious parties learn the topology of target systems,   
 
 <div class="info">
 **Links to risks:**
@@ -1023,7 +1124,7 @@ Following the principle of defense in depth and least privilege, it is important
 
 ### Strong authentication
 
-Use password policies at every layer of the infrastructure (i.e. DUCK123 should never be an allowed password ;-)). When users are authenticating, MFA should be used.
+Use password policies to ensure that access control mechanisms are sufficiently strong at every layer of the infrastructure (i.e. DUCK123 should never be an allowed password ;-)). When users are authenticating, MFA should be used.
 
 <div class="info">
 **Links to risks:**
@@ -1033,11 +1134,56 @@ Use password policies at every layer of the infrastructure (i.e. DUCK123 should 
 
 ### Prevent physical access to non-authorized persons
 
-This is mainly for bare-metal installations. If you host your nodes on-premise, ensure that physical access to the servers is restricted through a key-mechanism. Ideally, any entry and exit should be logged.
+This covers all physical devices that can access the Node, as well as all areas in which such devices are kept, whether "on-premises", distributed, hosted by a third party, or remote mobile devices such as laptops.
+
+* Manage and monitor entry to physical areas and physical access to assets.
+
+Best practice for managing physical access includes ensuring that authorization is granted as necessary, following the principles of [Least Privilege], meaning that some devices are physically segregated in areas where access is determined according to their function. Note that this covers the use of devices authorized to access the networks nodes operate on, and is particularly important for devices authorized to access management and analytical functions of nodes.
+
+Ideally all physical access to premises and facilities is monitored, particularly to deter, and determine whether the facility is subject to, <dfn>piggybacking</dfn>, where an unauthorized entrant is allowed in by someone who has a valid authorization for themselves. However, in the context of remote operators' access through a computer this is particularly challenging in practice.
+
+Piggybacking may occur inadvertently, through politely holding a door for someone without checking that they have current valid authorization to enter, negligently by allowing someone to enter for a legitimate purpose despite that person not having a valid authorization, or maliciously allowing someone to enter knowing that their purpose is nefarious.
+
+In the inadvertent case, relevant mitigations are to ensure all those with authorization understand the necessity to enforce phyiscal access control, and to provide simple and effective ways to check authorization, and to ensure that remote access devices as far as possible are dedicated to the defined purposes rather than authorizing on general-purpose laptops that can be subjected to attacks when being used for a different task such as general email, or playing games.
+
+To minimize negligently allowed access, it is important to ensure that access systems are effectively maintained and managed to ensure there is no good reason to allow an unauthorized person access. This can range from the design of onboarding systems to the effectiveness of internal management feedback systems for discovering unanticipated problems faced by operators.
+
+Best practice is to ensure that physical access is managed by systems that can efficiently enable access to authorised parties (keycards, biometric scanners) and monitor actual access such as visual verification that the authorized party is the one entering.
+
+It is important to log and audit access sufficiently frequently to detect problems - see also [Monitoring](@@).
+
+* Protect against environmental threats and utility failures
+
+Physical devices are subject to physical changes, including environmental issues such as temperature extremes that can cause damage, or utility failures such as power or internet failure.
+
+Mitigation strategies include the use of redundant infrastructure with failure detection and failover systems, from  backup node servers in different geographical locations to backup power supply e.g. through local batteries or power generation. The level of mitigation that is appropriate depends on the level of risk, and the costs of both failure and mitigating failure. These calculations mean economies of scale will enable larger-scale operations to be more robust than smaller ones, for a given price.
+
+It is also important to ensure that facilities have appropriate protection from relevant environmental risks - whether fire, flooding, extremes of temperature or wind or even destructive physical attacks will depend in part on the specific location and nature of the facility.
+
+* Maintain all equipment throughout a defined life-cycle.
+
+//move out of physical access?
+
+The lifecycle of equipment, most particularly node servers and computers used to access and manage them, is a determinant of overall security.
+
+Best practices for lifecycle management include the ability to remotely pause, shut down, and wipe devices clean, although this needs to be considered in the context of the risk of malicious access to those capabilities.
+
+[Monitoring](@@) can also identify specific conditions that adversely affect equipment and suggest that a lifecycle plan needs adjustment - whether writing off equipment destroyed by fire, or increasing preventive maintenance for physical access systems that are being used far in excess of expectations that drove the existing maintenance plan.
+
+**References:**
+
+* ISO27001 Annex A 7
+
+**Examples for best practices:**
+
+* Camera systems at doors.
+* Segregation of areas where people have access to.
+* Thorough destruction of storage media.
 
 <div class="info">
-**Links to risks:**
+**Links to Risks:**
 
+* [DOW2](#risk-dow-2)
 * [DOW4](#risk-dow-4)
 * [KEC6](#risk-kec-6)
 * [KEC8](#risk-kec-8)
@@ -1045,7 +1191,7 @@ This is mainly for bare-metal installations. If you host your nodes on-premise, 
 
 ## Development and Update Process
 
-### Testing and review of all changes to infrastructure code&#x20;
+### Testing and review of all changes to infrastructure code
 
 Anything on the infrastructure should be captured in a code repository, and changes managed through a versioning system such as Git. No direct push to the main branch should be possible; everything should go through pull requests and review.
 
@@ -1260,9 +1406,8 @@ Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-
 * General cyber security (Firewall, Intrusion Detection System, ....)
 * Check the uptime promise of cloud provider (minimum three 9s)
 * Failover system (also in different locations)
-* Keeping track of age and replacing appliances
+* Keeping track of age and replacing appliances //currently in access control
 * Conduct an internal special study of failover and load balancer strategies
-* Securing the physical access
 * Being informed about the relevant natural catastrophes
 * Ensure stable Internet connection of the System (Cloud, Bare Metal, ....)
 * Ensure stable Power connection of the System (Cloud, Bare Metal, ....)
@@ -1279,9 +1424,45 @@ Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-
 
 # Controls Catalog & Best Practices
 
-This section contains controls by framework that were identified to be material to Node Operator risks
+This section contains controls material to Node Operator risks
 
-## Summary
+## Controls for Access Control
+
+### Authentication required for services
+
+All requests for services REQUIRE appropriate authentication
+
+For example, a Node does not respond to anonymous requests on any port.
+
+@@ link to relevant mitigation(s)
+
+### Access to Nodes limited by Network
+
+Nodes MUST NOT respond to requests from outside a defined network.
+
+### Access to server rooms is limited
+
+Entry to physical server locations MUST require authorization
+
+For example, a biometric scan or the use of a keycard.
+
+### Access to server rooms is verified
+
+Entry to physical server locations MUST be reviewed periodically
+
+For example, comparing the number of people entering with the number of authorizations logged, or checking that the person who entered coresponds to the authorization used.
+
+### Relevant external controls
+
+* [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
+* [ISO27001](#iso27001) Annex A 5.15
+* [SOC2](#soc2) Trust services Criteria CC 6.1
+* [SOC2](#soc2) Trust services Criteria CC 6.3
+* @@ NORS, BSSC NOS, Web3SOC, ...?
+
+## Summary of external controls
+
+The following external controls correspond to controls defined in this specification.
 
 <table><thead>
 <tr><th width="443">Framework</th><th>Criterion</th></tr></thead><tbody>
@@ -1396,38 +1577,6 @@ This section contains controls by framework that were identified to be material 
 
 ## OWASP
 
-### Access Control mitigations
-
-When it comes to access control, there are three pillars that need to be considered:
-
-* Authentication: Ensure that no service accepts requests without some form of authentication.
-* Authorization: Clearly define who can read/write/update/delete resources. Ideally, this is not done on a per-user basis, but on a per-role basis.
-* Audit: Ensure that all access is logged so that you can alert on anomalies. Especially login failures should be logged.
-
-Special considerations:
-
-* Limit the IP sources for access.
-* Disable meta-data serving through public endpoints (like what server is running in what version).
-* Limit the outbound traffic of a node that runs a certain service.
-* Apply rate limits to ensure that internal services cannot unintentionally DDos each other.
-* Where possible apply the use of authentication tokens that have a limited lifetime.
-
-**References:**
-
-* [OWASP A01:2022: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
-
-#### Examples for best practices:
-
-* [Webserver authentication configuration of Microsoft IIS servers.](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/) Observe how different authentication methods are possible to be set there. `anonymousAuthentication` would allow anyone to access as `anonymous`, which is rarely the intention except for the starting page. `basicAuthentication` is better than nothing, but makes user management not scalable. `clientCertificateMappingAuthentication` and `digestAuthentication` are the better ways to also implement RBAC.
-
-<div class="info">
-**Links to risks:**
-
-* [GIR1](#risk-gir-1)
-* [GIR5](#risk-gir-5)
-* [GIR7](#risk-gir-7)
-* [GIR9](#risk-gir-9)
-</div>
 
 ### Server-side request forgery mitigations
 
@@ -1531,74 +1680,6 @@ Main outline from the COSO principles:
 * [GIR24](#risk-gir-24)
 </div>
 
-### Access Control
-
-This is, by far, the most important mitigation. On- and off-boarding should be simple, and every piece of the infrastructure should be secured from unauthenticated and unauthorized access.
-
-Main outline from the COSO principles:
-
-1. Keep an inventory of information assets
-2. Restrict Logical Access — Logical access to information assets, should be restricted through the use of access control software and rule sets.
-3. Use authentication systems.
-4. Network Segmentation — Restrict access to nodes to a minimum set of IPs.
-5. Manages Points of Access — Access to nodes inside the segmented area need to be controlled with authentication and authorization methods.
-6. Proper credentials management for infrastructure software — A clear definition of each credential life-time is established and enforced.
-7. Protects Encryption Keys — Processes are in place to protect encryption keys for their lifetime.
-
-**References:**
-
-* CC 6.1 of Trust services Criteria
-
-**Examples for best practices:**
-
-* Creation and continuous analysis of Software Bill of Materials ([SBOM](https://www.cisa.gov/sbom)).
-* Use of Clients, roles and groups when using [AWS IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html).
-* Have an internal virtual private network and only have well-defined endpoints be accessible from the web.
-* Uses of vault systems to manage credentials and encryption keys. Like AWS KMS.
-
-<div class="info">
-**Links to risks:**
-
-* [DOW7](#risk-dow-7)
-* [KEC4](#risk-kec-4)
-* [GIR9](#risk-gir-9)
-* [GIR22](#risk-gir-22)
-</div>
-
-### Implement least privilege
-
-This mitigation goes into the authorization piece of the different users and software pieces. The principle of least access should be considered, as much as possible. Putting measures in place that restrict access to certain groups as an afterthought can become fairly expensive.
-
-Main outline from the COSO principles:
-
-1. Creates or Modifies Access — Processes are in place to create or modify access.
-2. Quick removal of access when needed
-3. Use Role-based access control (RBAC)
-4. Review of roles and permissions on a regular basis.
-
-<div class="info">
-**References:**
-
-* CC 6.3 of the Trust services Criteria
-</div>
-
-**Examples for best practices:**
-
-* Credentials rotation needs to be in place to ensure that there is no interruption in the service when it is done.
-* Off-boarding of a terminated employee should not take more than an hour. Ideally, one would only disable them inside a single-sign-on service such as [Cognito](https://aws.amazon.com/cognito/) or [Keycloak](https://www.keycloak.org).
-* Tools need to be in place to analyze the permissions of certain users/programs and determine if these are too wide.
-* Use of roles on the API endpoint level to determine the correct authorization.
-
-
-
-<div class="info">
-**Links to risks:**
-
-* [KEC11](#risk-kec-11)
-* [GIR1](#risk-gir-1)
-* [KEC8](#risk-kec-8)
-* [GIR25](#risk-gir-25)
-</div>
 
 ### Protection of Data in transit
 
@@ -1892,20 +1973,7 @@ Main outline from the COSO principles:
 
 ## ISO 27001
 
-### Access Control
 
-Main outline of the Information security controls reference:
-
-* Rules to control physical and logical access to information needs to be in place.
-
-**References:**
-
-* ISO27001 Annex A 5.15
-
-**Examples for best practices:**
-
-* Role Based Access Control.
-* Implement an authentication mechanism into every service.
 
 <div class="info">
 **Links to Risks:**
@@ -1981,36 +2049,7 @@ Main outline of the Information security controls reference:
 * [SLS9](#risk-sls-9)
 </div>
 
-### Physical Controls
 
-Main outline of the Information security controls reference:
-
-This is specific for the case where node operators are running their infrastructure on bare-metal and on their own premises.
-
-* Protect physical areas and assets.
-* Control entry to physical assets.
-* All physical access to premises needs to be monitored.
-* As much as possible, protect against environmental threats.
-* Also secure off-site assets, if present.
-* Supporting utilities, such as electricity and internet access, need to be protected.
-* Maintain all equipment throughout a defined life-cycle.
-* Enforce a strict rule of disposal and re-use of equipment.
-
-**References:**
-
-* ISO27001 Annex A 7
-
-**Examples for best practices:**
-
-* Camera systems at doors.
-* Segregation of areas where people have access to.
-* Thorough destruction of storage media.
-
-<div class="info">
-**Links to Risks:**
-
-* [DOW2](#risk-dow-2)
-</div>
 
 ### Privileged access rights
 
