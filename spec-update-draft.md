@@ -632,7 +632,8 @@ Assess the losses directly linked to the slashing event. This can include:
 * Slashing leads to validator downtime until the slashed validator is exited
 * Missed rewards
 * Possible recoveries from insurance payments
-* The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
+
+
 
 
 **Direct Monetary Losses from a Downtime Event**\
@@ -641,7 +642,6 @@ Assess the losses directly from the downtime event. This can include:
 * Downtime penalties until the validator is exited
 * Missed rewards
 * Possible recoveries from insurance payments
-* The following resource can help to determine the losses for slashing and downtime: [https://shorturl.at/vxGM4](https://shorturl.at/vxGM4)
 
 **Reputational Risks**\
 Determine the monetary loss from reputational damage. This includes:
