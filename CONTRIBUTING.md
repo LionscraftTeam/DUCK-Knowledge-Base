@@ -1,3 +1,5 @@
+# Providing Feedback
+
 Your feedback is important to help us improve the DUCK knowledge base. We are grateful for and would like to acknowledge contributions, but there are some important points to consider when providing them.
 
 ##  Terms and Conditions
@@ -8,6 +10,11 @@ BY CONTRIBUTING TO THIS REPOSITORY, YOU AGREE
 2. TO PROVIDE YOUR CONTRIBUTIONS UNDER THE TERMS OF THE [APACHE 2.0 LICENSE](LICENSE.md)
 3. TO OFFER TO LIONSTCRAFT PTE, IN EXCHANGE FOR THE MAINTENANCE OF THIS WORK, A NON-EXCLUSIVE WORLDWIDE IRREVOCABLE LICENSE TO PERFORM, COPY, MODIFY AND DISTRIBUTE YOUR CONTRIBUTIONS.
 
+**Please Note**: The `main` branch in this repository generally should not be changed. It provides the source for the DUCK content.
+We plan to leave that in place as a historical reference.
+
+The [**current update draft**](spec-update-draft.md) is the latest development state of the proposal for a new version.
+Please provide feedback based on that document.
 
 ## What
 
@@ -63,7 +70,7 @@ You can also make a Pull Request. If you do:
 
 ## What happens next?
 
-Issues and Pull Requests are assigned at least one milestone, which refers to a meeting at which they can be discussed and decided. 
+Issues and Pull Requests are assigned at least one milestone, which refers to a meeting at which they can be discussed and decided.
 
 If they seem to contribute in a direction that is already clearly settled, they are likely to be labeled "[Bulk Resolution](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/bulk%20resolution)"
 with the expectation that no formal discussion will be needed to approve them, although if someone objects at the meeting or in comments, this automatic adoption will not happen.
