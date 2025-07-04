@@ -584,59 +584,7 @@ Risk related to running specific services.
 
 Processes and actions that should be defined to address risks and that cover the concrete procedures in case of related incidents. &#x20;
 
-## 1. Risk Monitoring
-
-Leverage monitoring dashboards or systems to identify the risk and gain relevant data.
-
-### Beacon Chain Monitoring
-
-* **Slashing Events:** Monitor the beacon chain for any slashing events.
-* **Anti-Slashing Database:** Regularly poll the local node to ensure the anti-slashing database is enabled and functioning correctly.
-* **Impact of Slashing:** Assess and monitor the broader impact of any slashing incidents on the network.
-* **Relay List Monitoring:** Monitor the relay list for availability metrics and load balance capabilities between various relayers for downtime conditions.
-* **Chain Reorganizations:** Track events and causes of chain reorganizations&#x20;
-* **Non-finalized Events:** Monitor events preventing the consensus layer from confirming finality
-* **Special Software Conditions:** Monitor major software upgrades requiring specific durations and   events that will conclude the upgrade
-
-### Node and System Health
-
-* **Node Health Metrics:** Monitor key metrics like CPU, memory, restarts, and uptime of nodes.
-* **System Configuration:** Monitor system configuration settings in real-time and continuously.
-* **Key Usages:** Track the usage of critical system keys.
-* **App-specific:** App specific metrics  (e.g. metrics for Dirk & Vouch)
-
-### Security and Compliance
-
-* **Access Control and Logs:** Keep an eye on access controls to nodes and abnormal configuration changes.
-* **Phishing and Endpoint Protection:** Monitor for phishing attacks and ensure the security of endpoint protection systems, both for employee devices and infrastructure nodes.
-* **Bastion Nodes:** If applicable, monitor bastion or connection nodes.
-* **Suspicious Internal Interactions:** Watch for any suspicious internal interactions with infrastructure, cloud security platforms, or network monitoring solutions.
-* **Access Patterns and Configurations:** Check for unusual access patterns and the configurations of VPNs and 2FA systems.
-* **Relay Compliance:** Monitor relay compliance aspects and availability metrics.
-
-### Upgrade and Code Management
-
-* **Upgrade Process:** Monitor the upgrade process, including client code source, notification channels, bug reports, and community disclosures.
-* **Customized Code in Testnet:** Monitor any new custom code deployed in the testnet.
-
-### Hardware and Network
-
-* **Baremetal and Network Equipment Health:** Monitor the health of bare metals and networking equipment, including internet and peering connectivity.
-* **Predictive Models:** Use predictive models for future malfunctions and equipment replacement needs.
-* **Capacity and Resource Usage:** Track capacity usage, processing memory, and CPU.
-* **Peering Connectivity:** Monitor both internal and external network peering connectivity.
-* **Firewall Configuration and Metrics:** Keep an eye on firewall configuration changes or unexpected increases in drop metrics.
-
-### Cloud and Infrastructure
-
-* **Cloud Monitoring Solutions:** Utilize cloud monitoring solutions to keep track of uptime and internal issues.
-* **Cloud Service Notifications:** Stay informed about cloud service announcements regarding expected downtime and maintenance.
-
-<div class="info">
-Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md "mention") for tool examples to perform the monitoring of some of the metrics mentioned above.
-</div>
-
-## 2. Incident Response Plan
+## 1.  Incident Response Plan
 
 Define Incident Response Plans (ICR) for all specific [risks](risks/ "mention") and store them in a central location with access for all relevant employees. ICRs establish plans for managing security incidents and events, and offer guidance for employees or incident responders who believe they have discovered, or are responding to, a security incident. Ensure that relevant employees are aware of the location. Simulations of an Incident Response Plan should be conducted at least once a year.
 
@@ -645,7 +593,7 @@ Incident Response Plan template can be found here:
 [https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true](https://docs.google.com/document/d/1ynZfeMh3vxZu7Juh-f34b50_3WHgejiL/edit?usp=sharing\&ouid=117284374075970906179\&rtpof=true\&sd=true)
 </div>
 
-## 3. Disaster Recovery Plan
+## 2. Disaster Recovery Plan
 
 A Disaster Recovery Plan gives guidance on recovering one or more information systems at an alternate facility in response to a major hardware or software failure or destruction of facilities. Simulations of a Disaster Recovery Plan should be conducted at least once a year in a test environment.
 
@@ -684,6 +632,7 @@ Assess the losses directly linked to the slashing event. This can include:
 * Slashing leads to validator downtime until the slashed validator is exited
 * Missed rewards
 * Possible recoveries from insurance payments
+
 
 
 **Direct Monetary Losses from a Downtime Event**\
@@ -1204,7 +1153,66 @@ Analyzing images for potential CVEs is simple nowadays (use e.g. [Trivy](https:/
 * [GIR17](#risk-gir-17)
 </div>
 
-## Monitoring
+## Monitoring and Alerting
+
+Leverage monitoring dashboards or systems to identify risks and gain relevant data.
+
+Monitoring is present in almost all compliance and security frameworks.
+
+It is crucial that not only high level business functions are monitored, but also correct functionality of all containers. In particular, proper log collection allows to dynamically verify that e.g. a slashing database ist actually being used, and used by the right signer.
+
+Main outline from the COSO principles:
+
+* Implements Detection Policies, Procedures, and Tools
+* Design and improve on Detection Measures — Ideally capture unauthorized access, suspicios traffic, etc.
+* Implement filters to not even let suspicious requests contact the back-end.
+* Check frequently if detection tools are working correctly.
+* Have one or more centralized dashboards to aggregate the data and present it in a digestible way to a human observer.
+
+
+### Beacon Chain Monitoring
+
+* **Slashing Events:** Monitor the beacon chain for any slashing events.
+* **Anti-Slashing Database:** Regularly poll the local node to ensure the anti-slashing database is enabled and functioning correctly.
+* **Impact of Slashing:** Assess and monitor the broader impact of any slashing incidents on the network.
+* **Relay List Monitoring:** Monitor the relay list for availability metrics and load balance capabilities between various relayers for downtime conditions.
+* **Chain Reorganizations:** Track events and causes of chain reorganizations&#x20;
+* **Non-finalized Events:** Monitor events preventing the consensus layer from confirming finality
+* **Special Software Conditions:** Monitor major software upgrades requiring specific durations and   events that will conclude the upgrade
+
+### Node and System Health
+
+* **Node Health Metrics:** Monitor key metrics like CPU, memory, restarts, and uptime of nodes.
+* **System Configuration:** Monitor system configuration settings in real-time and continuously.
+* **Key Usages:** Track the usage of critical system keys.
+* **App-specific:** App specific metrics  (e.g. metrics for Dirk & Vouch)
+
+### Security and Compliance
+
+* **Access Control and Logs:** Keep an eye on access controls to nodes and abnormal configuration changes.
+* **Phishing and Endpoint Protection:** Monitor for phishing attacks and ensure the security of endpoint protection systems, both for employee devices and infrastructure nodes.
+* **Bastion Nodes:** If applicable, monitor bastion or connection nodes.
+* **Suspicious Internal Interactions:** Watch for any suspicious internal interactions with infrastructure, cloud security platforms, or network monitoring solutions.
+* **Access Patterns and Configurations:** Check for unusual access patterns and the configurations of VPNs and 2FA systems.
+* **Relay Compliance:** Monitor relay compliance aspects and availability metrics.
+
+### Upgrade and Code Management
+
+* **Upgrade Process:** Monitor the upgrade process, including client code source, notification channels, bug reports, and community disclosures.
+* **Customized Code in Testnet:** Monitor any new custom code deployed in the testnet.
+
+### Hardware and Network
+
+* **Baremetal and Network Equipment Health:** Monitor the health of bare metals and networking equipment, including internet and peering connectivity.
+* **Predictive Models:** Use predictive models for future malfunctions and equipment replacement needs.
+* **Capacity and Resource Usage:** Track capacity usage, processing memory, and CPU.
+* **Peering Connectivity:** Monitor both internal and external network peering connectivity.
+* **Firewall Configuration and Metrics:** Keep an eye on firewall configuration changes or unexpected increases in drop metrics.
+
+### Cloud and Infrastructure
+
+* **Cloud Monitoring Solutions:** Utilize cloud monitoring solutions to keep track of uptime and internal issues.
+* **Cloud Service Notifications:** Stay informed about cloud service announcements regarding expected downtime and maintenance.
 
 ### Logging/Alerting at all levels of the infrastructure
 
@@ -1219,12 +1227,32 @@ Every component of your node operation is producing logs. These should be captur
 The alert systems should be automatically set up to take actions such as shutting nodes down (nuking).
 
 <div class="info">
-**Links to risks:**
+Take a look at [collection-of-tools-scripts-and-templates.md](../mitigation-and-controls-library/collection-of-tools-scripts-and-templates.md "mention") for tool examples to perform the monitoring of some of the metrics mentioned above.
+
+
+* Cognito's [Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html).
+* Filtering and anaysis of anomalies can be done in AWS using the [WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html).
+* An example for monitoring software is the [ELK stack](https://www.elastic.co/elastic-stack/).
+* A very common centralized dashboard is [Grafana](https://grafana.com) - an example of [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
+
+</div>
+
+
+<div class="info">
+#### Relevant DUCK risks:
 
 * [SLS8](#risk-sls-8)
 * [SLS16](#risk-sls-16)
 * [DOW6](#risk-dow-6)
 * [DOW15](#risk-dow-15)
+* [GIR4](#risk-gir-4)
+* [GIR13](#risk-gir-13)
+
+#### Equivalent External Controls
+
+* [SOC2](#soc2) Trust Services Criteria CC 7.2
+* [ISO 27001](#iso-27001) Annex A 8.16
+
 </div>
 
 ## General Measures
@@ -1629,7 +1657,6 @@ Main outline from the COSO principles:
 
 * Many software pieces have defined configuration standards provided by [CIS benchmarks](https://www.cisecurity.org).
 * Configuration standards can be enforced by automated software (e.g. [CoGuard](https://www.coguard.io))
-* An example for monitoring software is the [ELK stack](https://www.elastic.co/elastic-stack/). A very common centralized dashboard is [Grafana](https://grafana.com).
 
 <div class="info">
 **Links to Risks:**
@@ -1638,33 +1665,7 @@ Main outline from the COSO principles:
 * [KEC8](#risk-kec-8)
 </div>
 
-### Have Monitoring in place
 
-Monitoring is so important, it is literally present in almost all compliance and security frameworks. It is crucial that not only high level business functions are monitored, but also correct functionality of all containers. In particular, proper log collection allows to dynamically verify that e.g. a slashing database ist actually being used, and used by the right signer.
-
-Main outline from the COSO principles:
-
-* Implements Detection Policies, Procedures, and Tools
-* Design and improve on Detection Measures — Ideally capture unauthorized access, suspicios traffic, etc.
-* Implement filters to not even let suspicious requests contact the back-end.
-* Check frequently if detection tools are working correctly.
-* Have one or more centralized dashboards to aggregate the data and present it in a digestible way to a human observer.
-
-**References:**
-
-* CC 7.2 of the SOC 2 trust services criteria.
-
-**Examples for best practices:**
-
-* Example of [alerting setup in Grafana.](https://grafana.com/docs/grafana/latest/alerting/set-up/)
-* Cognito's [Userpool Addons for auditing authentications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html).
-* Filtering and anaysis of anomalies can be done in AWS using the[ WAF module](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html).
-
-<div class="info">
-**Links to Risks:**
-
-* [GIR13](#risk-gir-13)
-</div>
 
 ### Analyze security events and learn from them
 
@@ -2102,25 +2103,6 @@ Main outline of the Information security controls reference:
 * [DOW17](#risk-dow-17)
 </div>
 
-### Monitoring Activities
-
-Main outline of the Information security controls reference:
-
-* All infrastructure components need to be monitored and proper alerting systems need to be in place.
-
-**References:**
-
-* [ISO 27001](#iso-27001) Annex A 8.16
-
-**Examples for best practices:**
-
-* See corresponding [SOC 2 control](https://app.gitbook.com/o/4wlsLrcXqEBGDqz0Hphy/s/xTRnDyIanlwU7cCKcAju/\~/changes/41/mitigation-and-controls-library/mitigation-strategies-and-best-practices/mitigation-strategies#to-meet-its-objectives-the-entity-uses-detection-and-monitoring-procedures-to-identify-1-changes-to).
-
-<div class="info">
-**Links to Risks:**
-
-* [GIR4](#risk-gir-4)
-</div>
 
 ### Privileged utility programs
 
