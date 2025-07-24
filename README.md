@@ -18,11 +18,13 @@ The primary objective of DUCK is to bootstrap and facilitate community engagemen
 
 By disseminating and providing easy access to this knowledge, the node operator community will be empowered to increase robustness. It will ensure that all operators, irrespective of their technical proficiency, can engage with a wealth of information, experiences, and methodologies to adapt and customize to their own specific service model.&#x20;
 
-## Updating D.U.C.K.
+## Updating D.U.C.K. - ValOS
 
-The knowledge base is being revised over the course of 2025, to help make it more actionable.
+The work is being evolved, in the context of "[ValOS](https://github.com/lidofinance/valos/)" (Validator Operation Standard) to produce a more actionable set of requirements.
 
 ## How can you contribute?
 
 You can provide any feedback, or comments through [a google form](https://forms.gle/RaUWtoKdNWivJb5R8),
-or raising or commenting on issues or pull requests in [this github repository](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/).
+or raising or commenting on issues or pull requests in [the ValOS github repository](https://github.com/lidofinance/valos/).
+
+There is also a [ValOS Telegram group](https://t.me/+ys5MxWs16T1jOWVi) you can join, where you can discuss feedback. Issues change proposals are posted to that group to ensure transparency and provide an opportunity for feedback.
