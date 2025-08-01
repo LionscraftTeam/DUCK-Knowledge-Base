@@ -1,5 +1,15 @@
 Your feedback is important to help us improve the DUCK knowledge base. We are grateful for and would like to acknowledge contributions, but there are some important points to consider when providing them.
 
+## This repository is being phased out. Please use the [ValOS repository](https://github.com/lidofinance/valos) for new Issues and Pull Requests
+
+This repository is slowly being phased out of active use, as we develop the "Validator Operations Standard" as a successor to this Knowledge Base. 
+
+After a formal release of ValOS this repostory will remain indefinitely as an archive of the v1 work.
+
+We will address existing issues, and welcome simple fixes such as typos or link fixes in this repository.
+
+However, to ensure they are addressed you should use the [ValOS repository](https://github.com/lidofinance/valos) for new Issues and Pull Requests that make "real changes".
+
 ##  Terms and Conditions
 
 BY CONTRIBUTING TO THIS REPOSITORY, YOU AGREE
@@ -13,12 +23,16 @@ BY CONTRIBUTING TO THIS REPOSITORY, YOU AGREE
 
 ### What feedback is useful?
 
-Simple fixes such as correcting broken links, typos, and the like are welcome and appreciated.
+Simple fixes such as correcting broken links, typos, and the like are welcome and appreciated in this repository.
 
 If you are looking for something to contribute on, please consider the items labeled "[Good First Issue](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/good%20first%20issue)", or
-"[Help Wanted](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/help%20wanted)".
+"[Help Wanted](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/help%20wanted)", 
+but please note that we now request Pull Requests be made in the [ValOS repository](https://github.com/lidofinance/valos), NOT in this repository.
 
-If there is something that you think could and should be improved, please tell us. Importantly, this should include explaining why something doesn't work as well as it could -
+If there is something that you think could and should be improved, please first check that it hasn't already been fixed in the [proposed update draft]().
+
+If it has, you're welcome :) but if not please tell us by filing an issue in the [ValOS repository](https://github.com/lidofinance/valos).
+Importantly, this should include explaining why something doesn't work as well as it could -
 for example explaining the situation where it causes a problem, or doesn't resolve a doubt.
 
 It is not necessary to propose a solution to the problem, although you are [welcome to do so](#how-to-propose-a-solution).
@@ -34,14 +48,16 @@ Racist, sexist, and other such anti-social content or behaviour will not be tole
 
 ### How to provide feedback?
 
-The core mechanism to provide feedback is comments on issues. Please look for an [existing issue](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/issues) that covers the topic you wish to discuss,
+The core mechanism to provide feedback is comments on issues. Please look for an existing [issue in this repository](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/issues)
+and [in the ValOS repository](https://github.com/lidofinance/valos) that covers the topic you wish to discuss,
 and if there is one, please add a comment there, rather than opening a new issue.
 
-If the issue has been closed, it means this has been considered. While it is possible to re-open it, that is less likely to happen unless there is new information provided:
+If the issue has been closed, it means this has been considered. While it is possible to re-open it, that is less likely to happen
+(especially if it is in this repository) unless there is new information provided:
 a change in the general situation including a general shift in community opinion, a new approach to dealing with it that hasn't been considered, or the like.
-So it may be that your comment doesn't result in re-opening, but that it in turn attracts more comment that does mean we re-examine the question.
 
-If no existing issue covers your topic, please do raise a new issue.
+It may be that your comment doesn't result in re-opening, but that it in turn attracts more comment that does mean we re-examine the question.
+
 
 ### How to propose a solution?
 
@@ -60,18 +76,3 @@ You can also make a Pull Request. If you do:
   This is because unless a large Pull request is adopted very quickly, it complicates the development of all other Pull Requests while it is pending.
 - It is helpful if you manage to follow all the editorial conventions, provide links, etc. However, all Pull Requests will be reviewed and if it seems necessary edited,
   so if you are not going to do this you should still feel free to make the proposal and know that your contribution is appreciated.
-
-## What happens next?
-
-Issues and Pull Requests are assigned at least one milestone, which refers to a meeting at which they can be discussed and decided. 
-
-If they seem to contribute in a direction that is already clearly settled, they are likely to be labeled "[Bulk Resolution](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/bulk%20resolution)"
-with the expectation that no formal discussion will be needed to approve them, although if someone objects at the meeting or in comments, this automatic adoption will not happen.
-
-Otherwise they are likely to be labeled "[Question](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/question)", and discussed, with likely possible outcomes including:
-- the item can be closed with no plans to continue discussion, or
-- accepted "as is", or
-- accepted with some changes that seem to match the spirit, or
-- returned for further work and/or discussion.
-
-If they are labeled "[Help Wanted](https://github.com/LionscraftTeam/DUCK-Knowledge-Base/labels/help%20wanted)", it generally means that more information is sought. That might include further explanation or more specific work.
