@@ -20,7 +20,7 @@ By disseminating and providing easy access to this knowledge, the node operator 
 
 ## Updating D.U.C.K. - ValOS
 
-The work is being evolved, in the context of "[ValOS](https://github.com/lidofinance/valos/)" (Validator Operation Standard) to produce a more actionable set of requirements.
+The work is being evolved, as "[ValOS](https://github.com/lidofinance/valos/)" (Validator Operation Standard), to produce a more actionable set of requirements.
 
 ## How can you contribute?
 
